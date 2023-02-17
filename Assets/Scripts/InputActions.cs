@@ -53,6 +53,15 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Strafe"",
+                    ""type"": ""Value"",
+                    ""id"": ""440b5a45-e0eb-45c2-a938-fc5795ff25d0"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -132,6 +141,39 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""action"": ""Rotation"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""d7d37cbe-e66d-4c7c-b5e5-9e7d285600e1"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Strafe"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""595527ea-ac8b-41db-ad3b-6c65060b878a"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""Strafe"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""efc2d256-5bc9-45d6-b6e8-2dfa4148dcad"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""Strafe"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         },
@@ -188,6 +230,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
         m_Player_Rotation = m_Player.FindAction("Rotation", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
+        m_Player_Strafe = m_Player.FindAction("Strafe", throwIfNotFound: true);
         // GUI
         m_GUI = asset.FindActionMap("GUI", throwIfNotFound: true);
         m_GUI_Escape = m_GUI.FindAction("Escape", throwIfNotFound: true);
@@ -253,6 +296,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Movement;
     private readonly InputAction m_Player_Rotation;
     private readonly InputAction m_Player_Interact;
+    private readonly InputAction m_Player_Strafe;
     public struct PlayerActions
     {
         private @InputActions m_Wrapper;
@@ -260,6 +304,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         public InputAction @Movement => m_Wrapper.m_Player_Movement;
         public InputAction @Rotation => m_Wrapper.m_Player_Rotation;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
+        public InputAction @Strafe => m_Wrapper.m_Player_Strafe;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -278,6 +323,9 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 @Interact.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
                 @Interact.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
                 @Interact.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
+                @Strafe.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStrafe;
+                @Strafe.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStrafe;
+                @Strafe.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStrafe;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -291,6 +339,9 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
+                @Strafe.started += instance.OnStrafe;
+                @Strafe.performed += instance.OnStrafe;
+                @Strafe.canceled += instance.OnStrafe;
             }
         }
     }
@@ -342,6 +393,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnRotation(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnStrafe(InputAction.CallbackContext context);
     }
     public interface IGUIActions
     {

@@ -15,5 +15,5 @@ MonoBehaviour:
   PlayerPrefab: {fileID: 7747662755465343438, guid: f3f880b15fb09884c91163994356cebd,
     type: 3}
   PlayerInitialPosition: {x: 0, y: 0, z: 0}
-  PlayerSpeed: 10
-  PlayerRotationSpeed: 180
+  PlayerSpeed: 5
+  PlayerRotationSpeed: 150

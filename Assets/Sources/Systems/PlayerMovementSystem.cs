@@ -19,7 +19,9 @@ public class PlayerMovementSystem : IExecuteSystem
         foreach(var entity in _group)
         {
             var deltaRotation = Quaternion.Euler(new Vector3(0, _contexts.game.rotationInput.value, 0) * entity.rotationSpeed.value * Time.fixedDeltaTime);
-            var deltaPosition = entity.rigidbody.value.transform.forward * _contexts.game.velocityInput.value.z * entity.speed.value * Time.fixedDeltaTime;
+            var deltaForward = entity.rigidbody.value.transform.forward * _contexts.game.velocityInput.value.z;
+            var deltaRight = entity.rigidbody.value.transform.right * _contexts.game.velocityInput.value.x;
+            var deltaPosition = (Vector3.Normalize(deltaRight + deltaForward)) * entity.speed.value * Time.fixedDeltaTime;
 
             entity.rigidbody.value.MoveRotation(entity.rigidbody.value.rotation * deltaRotation);
             entity.rigidbody.value.MovePosition(entity.rigidbody.value.position + deltaPosition);
