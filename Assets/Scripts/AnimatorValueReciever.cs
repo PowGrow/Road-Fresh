@@ -1,7 +1,7 @@
 using Entitas.Unity;
 using UnityEngine;
 
-public class RigidbodyViewComponent : MonoBehaviour
+public class AnimatorValueReciever : MonoBehaviour
 {
     private Animator _animator;
     private VelocityInputComponent _velocityInput;
