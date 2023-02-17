@@ -31,6 +31,8 @@ public sealed class InstantiateViewSystem: ReactiveSystem<GameEntity>
             gameObject.Link(entity);
             if (entity.hasInitialPoistion)
                 gameObject.transform.position = entity.position.value;
+            if (entity.isPhysic)
+                entity.AddRigidbody(gameObject.GetComponent<Rigidbody>());
         }
     }
 }

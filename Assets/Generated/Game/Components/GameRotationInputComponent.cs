@@ -9,7 +9,7 @@
 public partial class GameContext {
 
     public GameEntity rotationInputEntity { get { return GetGroup(GameMatcher.RotationInput).GetSingleEntity(); } }
-    public RotationInput rotationInput { get { return rotationInputEntity.rotationInput; } }
+    public RotationInputComponent rotationInput { get { return rotationInputEntity.rotationInput; } }
     public bool hasRotationInput { get { return rotationInputEntity != null; } }
 
     public GameEntity SetRotationInput(float newValue) {
@@ -46,19 +46,19 @@ public partial class GameContext {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public RotationInput rotationInput { get { return (RotationInput)GetComponent(GameComponentsLookup.RotationInput); } }
+    public RotationInputComponent rotationInput { get { return (RotationInputComponent)GetComponent(GameComponentsLookup.RotationInput); } }
     public bool hasRotationInput { get { return HasComponent(GameComponentsLookup.RotationInput); } }
 
     public void AddRotationInput(float newValue) {
         var index = GameComponentsLookup.RotationInput;
-        var component = (RotationInput)CreateComponent(index, typeof(RotationInput));
+        var component = (RotationInputComponent)CreateComponent(index, typeof(RotationInputComponent));
         component.value = newValue;
         AddComponent(index, component);
     }
 
     public void ReplaceRotationInput(float newValue) {
         var index = GameComponentsLookup.RotationInput;
-        var component = (RotationInput)CreateComponent(index, typeof(RotationInput));
+        var component = (RotationInputComponent)CreateComponent(index, typeof(RotationInputComponent));
         component.value = newValue;
         ReplaceComponent(index, component);
     }

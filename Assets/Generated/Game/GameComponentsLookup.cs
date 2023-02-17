@@ -10,25 +10,29 @@ public static class GameComponentsLookup {
 
     public const int GameSetup = 0;
     public const int InitialPoistion = 1;
-    public const int Player = 2;
-    public const int Position = 3;
-    public const int Resource = 4;
-    public const int Rotation = 5;
-    public const int RotationInput = 6;
-    public const int RotationSpeed = 7;
-    public const int Speed = 8;
-    public const int Velocity = 9;
-    public const int VelocityInput = 10;
-    public const int View = 11;
+    public const int Physic = 2;
+    public const int Player = 3;
+    public const int Position = 4;
+    public const int Resource = 5;
+    public const int Rigidbody = 6;
+    public const int Rotation = 7;
+    public const int RotationInput = 8;
+    public const int RotationSpeed = 9;
+    public const int Speed = 10;
+    public const int Velocity = 11;
+    public const int VelocityInput = 12;
+    public const int View = 13;
 
-    public const int TotalComponents = 12;
+    public const int TotalComponents = 14;
 
     public static readonly string[] componentNames = {
         "GameSetup",
         "InitialPoistion",
+        "Physic",
         "Player",
         "Position",
         "Resource",
+        "Rigidbody",
         "Rotation",
         "RotationInput",
         "RotationSpeed",
@@ -41,11 +45,13 @@ public static class GameComponentsLookup {
     public static readonly System.Type[] componentTypes = {
         typeof(GameSetupComponent),
         typeof(InitialPoistionComponent),
+        typeof(PhysicComponent),
         typeof(PlayerComponent),
         typeof(PositionComponent),
         typeof(ResourceComponent),
+        typeof(RigidbodyComponent),
         typeof(RotationComponent),
-        typeof(RotationInput),
+        typeof(RotationInputComponent),
         typeof(RotationSpeedComponent),
         typeof(SpeedComponent),
         typeof(VelocityComponent),

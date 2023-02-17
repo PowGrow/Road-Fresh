@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerPrefab: {fileID: 7747662755465343438, guid: f3f880b15fb09884c91163994356cebd,
     type: 3}
-  PlayerInitialPosition: {x: 0, y: 2, z: 0}
+  PlayerInitialPosition: {x: 0, y: 0, z: 0}
   PlayerSpeed: 10
+  PlayerRotationSpeed: 180
