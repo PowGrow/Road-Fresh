@@ -15,6 +15,7 @@ public sealed class PlayerInitializeSystem : IInitializeSystem
         var entity = _contexts.game.CreateEntity();
         entity.AddInitialPoistion(_contexts.game.gameSetup.value.PlayerInitialPosition);
         entity.isPhysic = true;
+        entity.isAnimated = true;
         entity.AddSpeed(_contexts.game.gameSetup.value.PlayerSpeed);
         entity.AddRotationSpeed(_contexts.game.gameSetup.value.PlayerRotationSpeed);
         entity.AddVelocity(Vector3.zero);

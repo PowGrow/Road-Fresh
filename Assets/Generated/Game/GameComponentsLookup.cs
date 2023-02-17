@@ -8,24 +8,28 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int GameSetup = 0;
-    public const int InitialPoistion = 1;
-    public const int Physic = 2;
-    public const int Player = 3;
-    public const int Position = 4;
-    public const int Resource = 5;
-    public const int Rigidbody = 6;
-    public const int Rotation = 7;
-    public const int RotationInput = 8;
-    public const int RotationSpeed = 9;
-    public const int Speed = 10;
-    public const int Velocity = 11;
-    public const int VelocityInput = 12;
-    public const int View = 13;
+    public const int Animated = 0;
+    public const int Animator = 1;
+    public const int GameSetup = 2;
+    public const int InitialPoistion = 3;
+    public const int Physic = 4;
+    public const int Player = 5;
+    public const int Position = 6;
+    public const int Resource = 7;
+    public const int Rigidbody = 8;
+    public const int Rotation = 9;
+    public const int RotationInput = 10;
+    public const int RotationSpeed = 11;
+    public const int Speed = 12;
+    public const int Velocity = 13;
+    public const int VelocityInput = 14;
+    public const int View = 15;
 
-    public const int TotalComponents = 14;
+    public const int TotalComponents = 16;
 
     public static readonly string[] componentNames = {
+        "Animated",
+        "Animator",
         "GameSetup",
         "InitialPoistion",
         "Physic",
@@ -43,6 +47,8 @@ public static class GameComponentsLookup {
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(AnimatedComponent),
+        typeof(AnimatorComponent),
         typeof(GameSetupComponent),
         typeof(InitialPoistionComponent),
         typeof(PhysicComponent),

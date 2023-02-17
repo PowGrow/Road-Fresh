@@ -14,7 +14,7 @@ public partial class GameContext {
 
     public GameEntity SetRotationInput(float newValue) {
         if (hasRotationInput) {
-            throw new Entitas.EntitasException("Could not set RotationInput!\n" + this + " already has an entity with RotationInput!",
+            throw new Entitas.EntitasException("Could not set RotationInput!\n" + this + " already has an entity with RotationInputComponent!",
                 "You should check if the context already has a rotationInputEntity before setting it or use context.ReplaceRotationInput().");
         }
         var entity = CreateEntity();
