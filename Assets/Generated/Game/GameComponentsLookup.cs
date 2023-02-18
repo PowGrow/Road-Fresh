@@ -10,28 +10,43 @@ public static class GameComponentsLookup {
 
     public const int Animated = 0;
     public const int Animator = 1;
-    public const int GameSetup = 2;
-    public const int InitialPoistion = 3;
-    public const int Physic = 4;
-    public const int Player = 5;
-    public const int Position = 6;
-    public const int Resource = 7;
-    public const int Rigidbody = 8;
-    public const int Rotation = 9;
-    public const int RotationInput = 10;
-    public const int RotationSpeed = 11;
-    public const int Speed = 12;
-    public const int Velocity = 13;
-    public const int VelocityInput = 14;
-    public const int View = 15;
+    public const int Collision = 2;
+    public const int Destroy = 3;
+    public const int ExitCollision = 4;
+    public const int GameSetup = 5;
+    public const int InitialPoistion = 6;
+    public const int Interactable = 7;
+    public const int InteractObject = 8;
+    public const int MainCamera = 9;
+    public const int Physic = 10;
+    public const int Player = 11;
+    public const int Position = 12;
+    public const int Resource = 13;
+    public const int Rigidbody = 14;
+    public const int Rotation = 15;
+    public const int RotationInput = 16;
+    public const int RotationSpeed = 17;
+    public const int Speed = 18;
+    public const int Vehicle = 19;
+    public const int VehicleSetup = 20;
+    public const int VehicleToCreate = 21;
+    public const int Velocity = 22;
+    public const int VelocityInput = 23;
+    public const int View = 24;
 
-    public const int TotalComponents = 16;
+    public const int TotalComponents = 25;
 
     public static readonly string[] componentNames = {
         "Animated",
         "Animator",
+        "Collision",
+        "Destroy",
+        "ExitCollision",
         "GameSetup",
         "InitialPoistion",
+        "Interactable",
+        "InteractObject",
+        "MainCamera",
         "Physic",
         "Player",
         "Position",
@@ -41,6 +56,9 @@ public static class GameComponentsLookup {
         "RotationInput",
         "RotationSpeed",
         "Speed",
+        "Vehicle",
+        "VehicleSetup",
+        "VehicleToCreate",
         "Velocity",
         "VelocityInput",
         "View"
@@ -49,8 +67,14 @@ public static class GameComponentsLookup {
     public static readonly System.Type[] componentTypes = {
         typeof(AnimatedComponent),
         typeof(AnimatorComponent),
+        typeof(CollisionComponent),
+        typeof(DestroyComponent),
+        typeof(ExitCollisionComponent),
         typeof(GameSetupComponent),
         typeof(InitialPoistionComponent),
+        typeof(InteractableComponent),
+        typeof(InteractObjectComponent),
+        typeof(MainCameraComponent),
         typeof(PhysicComponent),
         typeof(PlayerComponent),
         typeof(PositionComponent),
@@ -60,6 +84,9 @@ public static class GameComponentsLookup {
         typeof(RotationInputComponent),
         typeof(RotationSpeedComponent),
         typeof(SpeedComponent),
+        typeof(VehicleComponent),
+        typeof(VehicleSetupComponent),
+        typeof(VehicleToCreateComponent),
         typeof(VelocityComponent),
         typeof(VelocityInputComponent),
         typeof(ViewComponent)

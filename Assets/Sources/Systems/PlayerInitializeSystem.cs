@@ -14,6 +14,7 @@ public sealed class PlayerInitializeSystem : IInitializeSystem
     {
         var entity = _contexts.game.CreateEntity();
         entity.AddInitialPoistion(_contexts.game.gameSetup.value.PlayerInitialPosition);
+        entity.isPlayer = true;
         entity.isPhysic = true;
         entity.isAnimated = true;
         entity.AddSpeed(_contexts.game.gameSetup.value.PlayerSpeed);
@@ -24,6 +25,5 @@ public sealed class PlayerInitializeSystem : IInitializeSystem
         entity.AddRotationInput(0);
         entity.AddVelocityInput(Vector3.zero);
         entity.AddResource(_contexts.game.gameSetup.value.PlayerPrefab);
-        entity.isPlayer = true;
     }
 }

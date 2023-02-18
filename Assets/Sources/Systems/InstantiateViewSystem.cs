@@ -35,6 +35,9 @@ public sealed class InstantiateViewSystem: ReactiveSystem<GameEntity>
                 entity.AddRigidbody(gameObject.GetComponent<Rigidbody>());
             if (entity.isAnimated)
                 entity.AddAnimator(gameObject.GetComponent<Animator>());
+            if (entity.isPlayer)
+                entity.AddMainCamera(gameObject.GetComponentInChildren<Camera>().transform);
+
         }
     }
 }
