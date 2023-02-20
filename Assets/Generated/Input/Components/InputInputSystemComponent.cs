@@ -12,7 +12,7 @@ public partial class InputContext {
     public InputSystemComponent inputSystem { get { return inputSystemEntity.inputSystem; } }
     public bool hasInputSystem { get { return inputSystemEntity != null; } }
 
-    public InputEntity SetInputSystem(InputSystem newValue) {
+    public InputEntity SetInputSystem(RoadFresh.Input.InputSystem newValue) {
         if (hasInputSystem) {
             throw new Entitas.EntitasException("Could not set InputSystem!\n" + this + " already has an entity with InputSystemComponent!",
                 "You should check if the context already has a inputSystemEntity before setting it or use context.ReplaceInputSystem().");
@@ -22,7 +22,7 @@ public partial class InputContext {
         return entity;
     }
 
-    public void ReplaceInputSystem(InputSystem newValue) {
+    public void ReplaceInputSystem(RoadFresh.Input.InputSystem newValue) {
         var entity = inputSystemEntity;
         if (entity == null) {
             entity = SetInputSystem(newValue);
@@ -49,14 +49,14 @@ public partial class InputEntity {
     public InputSystemComponent inputSystem { get { return (InputSystemComponent)GetComponent(InputComponentsLookup.InputSystem); } }
     public bool hasInputSystem { get { return HasComponent(InputComponentsLookup.InputSystem); } }
 
-    public void AddInputSystem(InputSystem newValue) {
+    public void AddInputSystem(RoadFresh.Input.InputSystem newValue) {
         var index = InputComponentsLookup.InputSystem;
         var component = (InputSystemComponent)CreateComponent(index, typeof(InputSystemComponent));
         component.value = newValue;
         AddComponent(index, component);
     }
 
-    public void ReplaceInputSystem(InputSystem newValue) {
+    public void ReplaceInputSystem(RoadFresh.Input.InputSystem newValue) {
         var index = InputComponentsLookup.InputSystem;
         var component = (InputSystemComponent)CreateComponent(index, typeof(InputSystemComponent));
         component.value = newValue;

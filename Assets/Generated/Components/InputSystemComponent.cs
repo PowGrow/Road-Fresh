@@ -8,5 +8,5 @@
 //------------------------------------------------------------------------------
 [Entitas.CodeGeneration.Attributes.DontGenerate(false)]
 public sealed class InputSystemComponent : Entitas.IComponent {
-    public InputSystem value;
+    public RoadFresh.Input.InputSystem value;
 }

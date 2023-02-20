@@ -17,24 +17,42 @@ public static class GameComponentsLookup {
     public const int InitialPoistion = 6;
     public const int Interactable = 7;
     public const int InteractObject = 8;
-    public const int MainCamera = 9;
-    public const int Physic = 10;
-    public const int Player = 11;
-    public const int Position = 12;
-    public const int Resource = 13;
-    public const int Rigidbody = 14;
-    public const int Rotation = 15;
-    public const int RotationInput = 16;
-    public const int RotationSpeed = 17;
-    public const int Speed = 18;
-    public const int Vehicle = 19;
-    public const int VehicleSetup = 20;
-    public const int VehicleToCreate = 21;
-    public const int Velocity = 22;
-    public const int VelocityInput = 23;
-    public const int View = 24;
+    public const int InteractTextCanvas = 9;
+    public const int InteractText = 10;
+    public const int LeftArmPosition = 11;
+    public const int LeftLegPosition = 12;
+    public const int Lock = 13;
+    public const int MainCamera = 14;
+    public const int MountPosition = 15;
+    public const int Physic = 16;
+    public const int Player = 17;
+    public const int Position = 18;
+    public const int Resource = 19;
+    public const int Rider = 20;
+    public const int RiderLeftArmPosition = 21;
+    public const int RiderLeftLegPosition = 22;
+    public const int RiderRightArmPosition = 23;
+    public const int RiderRightLegPosition = 24;
+    public const int Riding = 25;
+    public const int RightArmPosition = 26;
+    public const int RightLegPosition = 27;
+    public const int Rigidbody = 28;
+    public const int Rotation = 29;
+    public const int RotationInput = 30;
+    public const int RotationSpeed = 31;
+    public const int Speed = 32;
+    public const int TryingToControlVehicle = 33;
+    public const int UnmountPosition = 34;
+    public const int Vehicle = 35;
+    public const int VehiclePrefabs = 36;
+    public const int VehicleSetup = 37;
+    public const int VehicleToCreate = 38;
+    public const int VehicleViewData = 39;
+    public const int Velocity = 40;
+    public const int VelocityInput = 41;
+    public const int View = 42;
 
-    public const int TotalComponents = 25;
+    public const int TotalComponents = 43;
 
     public static readonly string[] componentNames = {
         "Animated",
@@ -46,19 +64,37 @@ public static class GameComponentsLookup {
         "InitialPoistion",
         "Interactable",
         "InteractObject",
+        "InteractTextCanvas",
+        "InteractText",
+        "LeftArmPosition",
+        "LeftLegPosition",
+        "Lock",
         "MainCamera",
+        "MountPosition",
         "Physic",
         "Player",
         "Position",
         "Resource",
+        "Rider",
+        "RiderLeftArmPosition",
+        "RiderLeftLegPosition",
+        "RiderRightArmPosition",
+        "RiderRightLegPosition",
+        "Riding",
+        "RightArmPosition",
+        "RightLegPosition",
         "Rigidbody",
         "Rotation",
         "RotationInput",
         "RotationSpeed",
         "Speed",
+        "TryingToControlVehicle",
+        "UnmountPosition",
         "Vehicle",
+        "VehiclePrefabs",
         "VehicleSetup",
         "VehicleToCreate",
+        "VehicleViewData",
         "Velocity",
         "VelocityInput",
         "View"
@@ -74,19 +110,37 @@ public static class GameComponentsLookup {
         typeof(InitialPoistionComponent),
         typeof(InteractableComponent),
         typeof(InteractObjectComponent),
+        typeof(InteractTextCanvasComponent),
+        typeof(InteractTextComponent),
+        typeof(LeftArmPositionComponent),
+        typeof(LeftLegPositionComponent),
+        typeof(LockComponent),
         typeof(MainCameraComponent),
+        typeof(MountPositionComponent),
         typeof(PhysicComponent),
         typeof(PlayerComponent),
         typeof(PositionComponent),
         typeof(ResourceComponent),
+        typeof(RiderComponent),
+        typeof(RiderLeftArmPositionComponent),
+        typeof(RiderLeftLegPositionComponent),
+        typeof(RiderRightArmPositionComponent),
+        typeof(RiderRightLegPositionComponent),
+        typeof(RidingComponent),
+        typeof(RightArmPositionComponent),
+        typeof(RightLegPositionComponent),
         typeof(RigidbodyComponent),
         typeof(RotationComponent),
         typeof(RotationInputComponent),
         typeof(RotationSpeedComponent),
         typeof(SpeedComponent),
+        typeof(TryingToControlVehicleComponent),
+        typeof(UnmountPositionComponent),
         typeof(VehicleComponent),
+        typeof(VehiclePrefabsComponent),
         typeof(VehicleSetupComponent),
         typeof(VehicleToCreateComponent),
+        typeof(VehicleViewDataComponent),
         typeof(VelocityComponent),
         typeof(VelocityInputComponent),
         typeof(ViewComponent)

@@ -1,5 +1,7 @@
+using Entitas.Unity;
 using Unity.VisualScripting;
 using UnityEngine;
+using Entitas;
 
 public class InputHandler : MonoBehaviour
 {
@@ -61,7 +63,7 @@ public class InputHandler : MonoBehaviour
 
     private void Interact()
     {
-        //TO-DO INTERACT BUTTON
+        var entity = (GameEntity)gameObject.GetEntityLink().entity;
+        entity.isTryingToControlVehicle = true;
     }
-
 }

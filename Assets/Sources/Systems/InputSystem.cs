@@ -2,24 +2,27 @@ using Entitas;
 using Entitas.CodeGeneration.Attributes;
 using UnityEngine;
 
-[Input, Unique]
-public sealed class InputSystem : IExecuteSystem
+namespace RoadFresh.Input
 {
-    private Contexts _contexts;
-
-    private IGroup<GameEntity> _group;
-
-    public InputSystem(Contexts contexts)
+    [Input, Unique]
+    public sealed class InputSystem : IExecuteSystem
     {
-        _contexts = contexts;
-        _group = contexts.game.GetGroup(GameMatcher.AllOf(GameMatcher.Velocity,GameMatcher.Player));
-    }
+        private Contexts _contexts;
 
-    public void Execute()
-    {
-        foreach(var e in _group)
+        private IGroup<GameEntity> _group;
+
+        public InputSystem(Contexts contexts)
         {
-            e.ReplaceVelocity(new Vector3(_contexts.game.velocityInput.value.x, 0 , _contexts.game.velocityInput.value.y));
+            _contexts = contexts;
+            _group = contexts.game.GetGroup(GameMatcher.AllOf(GameMatcher.Velocity, GameMatcher.Player));
+        }
+
+        public void Execute()
+        {
+            foreach (var e in _group)
+            {
+                e.ReplaceVelocity(new Vector3(_contexts.game.velocityInput.value.x, 0, _contexts.game.velocityInput.value.y));
+            }
         }
     }
 }

@@ -9,6 +9,11 @@ public class TestVehicleFactory : MonoBehaviour
         _contexts = Contexts.sharedInstance;
     }
 
+    private void Start()
+    {
+        CreateVespa();
+    }
+
     [ContextMenu("CreateVespa")]
     public void CreateVespa()
     {

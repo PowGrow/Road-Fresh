@@ -6,7 +6,8 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private GameSetup gameSetup;
     [SerializeField]
-    private VehicleSetup vehicleSetup;
+    private VehiclePrefabs vehiclePrefabs;
+
     private Systems _systems;
 
     private void Start()
@@ -14,7 +15,7 @@ public class GameController : MonoBehaviour
         var contexts = Contexts.sharedInstance;
         _systems = new GameSystems(contexts);
         contexts.game.SetGameSetup(gameSetup);
-        contexts.game.SetVehicleSetup(vehicleSetup);
+        contexts.game.SetVehiclePrefabs(vehiclePrefabs);
         _systems.Initialize();
     }
 

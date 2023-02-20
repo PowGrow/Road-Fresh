@@ -1,58 +1,80 @@
 using System;
 using System.Collections.Generic;
 using Entitas;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class InteractObjectBaseSystem : ReactiveSystem<GameEntity>
+namespace RoadFresh.Interactions
 {
-    protected Contexts _contexts;
-
-    public InteractObjectBaseSystem(Contexts contexts) : base(contexts.game)
+    public class InteractObjectBaseSystem : ReactiveSystem<GameEntity>
     {
-        _contexts = contexts;
-    }
+        protected Contexts _contexts;
 
-    protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
-    {
-        return context.CreateCollector(GameMatcher.AnyOf(GameMatcher.ExitCollision,GameMatcher.Collision));
-    }
-
-    protected override bool Filter(GameEntity entity)
-    {
-        return entity.hasExitCollision || entity.hasCollision;
-    }
-
-    protected override void Execute(List<GameEntity> entities)
-    {
-        foreach (var entity in entities)
+        public InteractObjectBaseSystem(Contexts contexts) : base(contexts.game)
         {
-            var collisionSourceObject = GetSourceCollisionObjects(entity);
-            var collisionObject = GetCollisionObject(entity);
-            var collisionSourceEntity = _contexts.game.GetEntitiesWithView(collisionSourceObject).SingleEntity();
-            var collisionEntity = _contexts.game.GetEntitiesWithView(collisionObject).SingleEntity();
-            if (collisionSourceEntity != null)
-                DoAction(collisionEntity,collisionSourceEntity);
+            _contexts = contexts;
         }
 
-        for (int i = entities.Count - 1; i >= 0; i--)
+        protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
         {
-            entities[i].isDestroy = true;
+            return context.CreateCollector(GameMatcher.AnyOf(GameMatcher.ExitCollision, GameMatcher.Collision));
         }
-    }
 
-    protected virtual GameObject GetSourceCollisionObjects(GameEntity entity)
-    {
-        throw new NotImplementedException("Base system method GetSourceCollisionObjects must be overrided");
-    }
+        protected override bool Filter(GameEntity entity)
+        {
+            return entity.hasExitCollision || entity.hasCollision;
+        }
 
-    protected virtual GameObject GetCollisionObject(GameEntity entity)
-    {
-        throw new NotImplementedException("Base system method GetCollisionObject must be overrided");
-    }
+        protected override void Execute(List<GameEntity> entities)
+        {
+            foreach (var entity in entities)
+            {
+                var collisionSourceObject = GetSourceCollisionObjects(entity);
+                var collisionObject = GetCollisionObject(entity);
+                var collisionSourceEntity = _contexts.game.GetEntitiesWithView(collisionSourceObject).SingleEntity();
+                var collisionEntity = _contexts.game.GetEntitiesWithView(collisionObject).SingleEntity();
+                if (collisionSourceEntity != null)
+                    DoAction(collisionEntity, collisionSourceEntity);
+            }
 
-    protected virtual void DoAction(GameEntity entity,GameEntity entityToInteract)
-    {
-        throw new NotImplementedException("Base system method DoAction must be overrided");
+            for (int i = entities.Count - 1; i >= 0; i--)
+            {
+                entities[i].isDestroy = true;
+            }
+        }
+
+        protected virtual GameObject GetSourceCollisionObjects(GameEntity entity)
+        {
+            throw new NotImplementedException("Base system method GetSourceCollisionObjects must be overrided");
+        }
+
+        protected virtual GameObject GetCollisionObject(GameEntity entity)
+        {
+            throw new NotImplementedException("Base system method GetCollisionObject must be overrided");
+        }
+
+        protected virtual void DoAction(GameEntity entity, GameEntity entityToInteract)
+        {
+            throw new NotImplementedException("Base system method DoAction must be overrided");
+        }
+
+        protected static void SetInteractionTextAlphaValue(GameEntity entityToInteract, float value)
+        {
+            var entityColor = entityToInteract.interactText.value.color;
+            entityToInteract.interactText.value.color = new Color(entityColor.r, entityColor.g, entityColor.b, value);
+        }
+
+        public static void TryToHideInteractionTextOnRiding(GameEntity entity)
+        {
+            var hide = 0f;
+            if (entity.isRiding)
+                SetInteractionTextAlphaValue(entity.interactObject.value, hide);
+        }
+
+        public static void TryToShowInteractionTextAfterRiding(GameEntity entity)
+        {
+            var show = 1f;
+            if (!entity.isRiding)
+                SetInteractionTextAlphaValue(entity.interactObject.value, show);
+        }
     }
 }

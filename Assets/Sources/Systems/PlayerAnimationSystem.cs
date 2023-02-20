@@ -1,6 +1,4 @@
 using Entitas;
-using UnityEngine;
-using static UnityEngine.EventSystems.EventTrigger;
 
 public class PlayerAnimationSystem : IExecuteSystem
 {
@@ -19,6 +17,7 @@ public class PlayerAnimationSystem : IExecuteSystem
         foreach(GameEntity entity in _group)
         {
             isStrafing(entity);
+            entity.animator.value.SetBool("isRiding", entity.isRiding);
             entity.animator.value.SetFloat("VelocityZ", entity.velocityInput.value.z);
             entity.animator.value.SetFloat("VelocityX", entity.velocityInput.value.x);
             entity.animator.value.SetFloat("RotationY", entity.rotationInput.value);

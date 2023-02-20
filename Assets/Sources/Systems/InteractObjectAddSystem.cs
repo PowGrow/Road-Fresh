@@ -1,37 +1,47 @@
 using Entitas;
 using UnityEngine;
 
-public class InteractObjectAddSystem : InteractObjectBaseSystem
+namespace RoadFresh.Interactions
 {
-    protected Contexts _contexts;
-
-    public InteractObjectAddSystem(Contexts contexts) : base(contexts)
+    public sealed class InteractObjectAddSystem : InteractObjectBaseSystem
     {
-        _contexts = contexts;
-    }
+        protected Contexts _contexts;
 
-    protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
-    {
-        return context.CreateCollector(GameMatcher.Collision);
-    }
+        private const float SHOW = 1f;
 
-    protected override bool Filter(GameEntity entity)
-    {
-        return entity.hasCollision;
-    }
+        public InteractObjectAddSystem(Contexts contexts) : base(contexts)
+        {
+            _contexts = contexts;
+        }
 
-    protected override GameObject GetSourceCollisionObjects(GameEntity entity)
-    {
-        return entity.collision.collisionSourceObject;
-    }
+        protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
+        {
+            return context.CreateCollector(GameMatcher.Collision);
+        }
 
-    protected override GameObject GetCollisionObject(GameEntity entity)
-    {
-        return entity.collision.collisionObject;
-    }
+        protected override bool Filter(GameEntity entity)
+        {
+            return entity.hasCollision;
+        }
 
-    protected override void DoAction(GameEntity entity, GameEntity entityToInteract)
-    {
-        entity.AddInteractObject(entityToInteract);
+        protected override GameObject GetSourceCollisionObjects(GameEntity entity)
+        {
+            return entity.collision.collisionSourceObject;
+        }
+
+        protected override GameObject GetCollisionObject(GameEntity entity)
+        {
+            return entity.collision.collisionObject;
+        }
+
+        protected override void DoAction(GameEntity entity, GameEntity entityToInteract)
+        {
+            if (!entity.hasInteractObject)
+            {
+                entity.AddInteractObject(entityToInteract);
+                if (entity.isPlayer)
+                    SetInteractionTextAlphaValue(entityToInteract, SHOW);
+            }
+        }
     }
 }
