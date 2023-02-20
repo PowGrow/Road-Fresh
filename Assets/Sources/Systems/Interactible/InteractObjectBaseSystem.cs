@@ -62,19 +62,5 @@ namespace RoadFresh.Interactions
             var entityColor = entityToInteract.interactText.value.color;
             entityToInteract.interactText.value.color = new Color(entityColor.r, entityColor.g, entityColor.b, value);
         }
-
-        public static void TryToHideInteractionTextOnRiding(GameEntity entity)
-        {
-            var hide = 0f;
-            if (entity.isRiding)
-                SetInteractionTextAlphaValue(entity.interactObject.value, hide);
-        }
-
-        public static void TryToShowInteractionTextAfterRiding(GameEntity entity)
-        {
-            var show = 1f;
-            if (!entity.isRiding)
-                SetInteractionTextAlphaValue(entity.interactObject.value, show);
-        }
     }
 }

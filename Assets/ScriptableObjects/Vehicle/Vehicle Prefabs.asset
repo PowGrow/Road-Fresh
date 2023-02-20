@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f537d95358908345a046c1ec03e40fb, type: 3}
   m_Name: Vehicle Prefabs
   m_EditorClassIdentifier: 
-  Prefabs: []
+  Prefabs:
+  - {fileID: 3808187388778169613, guid: a6ebd8681085cbf43be50133d40a944b, type: 3}

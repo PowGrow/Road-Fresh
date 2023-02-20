@@ -64,6 +64,7 @@ public class InputHandler : MonoBehaviour
     private void Interact()
     {
         var entity = (GameEntity)gameObject.GetEntityLink().entity;
-        entity.isTryingToControlVehicle = true;
+        if(entity.hasInteractObject && entity.interactObject.value.isVehicle)
+            entity.isTryingToControlVehicle = true;
     }
 }

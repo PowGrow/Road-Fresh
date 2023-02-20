@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameSetup: {fileID: 11400000, guid: 9e49b142380f5c54281a3e6c28de4969, type: 2}
-  vehicleSetup: {fileID: 11400000, guid: b4b34b98dcae4a445901ca185e19d00f, type: 2}
+  vehiclePrefabs: {fileID: 11400000, guid: d4d7bf9519ba3454aa96c3330e53a508, type: 2}
 --- !u!4 &141031776
 Transform:
   m_ObjectHideFlags: 0

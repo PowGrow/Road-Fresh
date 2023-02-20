@@ -12,7 +12,7 @@ public class InteractTextSystem : ReactiveSystem<GameEntity>
 
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
     {
-        return context.CreateCollector(GameMatcher.InteractText);
+        return context.CreateCollector(GameMatcher.AnyOf(GameMatcher.InteractText));
     }
 
     protected override bool Filter(GameEntity entity)

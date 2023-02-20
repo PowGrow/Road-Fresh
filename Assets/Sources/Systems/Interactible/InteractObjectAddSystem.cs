@@ -3,43 +3,42 @@ using UnityEngine;
 
 namespace RoadFresh.Interactions
 {
-    public sealed class InteractObjectRemoveSystem : InteractObjectBaseSystem
+    public sealed class InteractObjectAddSystem : InteractObjectBaseSystem
     {
         protected Contexts _contexts;
 
-        private const float HIDE = 0f;
-        public InteractObjectRemoveSystem(Contexts contexts) : base(contexts)
+        public InteractObjectAddSystem(Contexts contexts) : base(contexts)
         {
             _contexts = contexts;
         }
 
         protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
         {
-            return context.CreateCollector(GameMatcher.ExitCollision);
+            return context.CreateCollector(GameMatcher.Collision);
         }
 
         protected override bool Filter(GameEntity entity)
         {
-            return entity.hasExitCollision;
+            return entity.hasCollision;
         }
 
         protected override GameObject GetSourceCollisionObjects(GameEntity entity)
         {
-            return entity.exitCollision.collisionSourceObject;
+            return entity.collision.collisionSourceObject;
         }
 
         protected override GameObject GetCollisionObject(GameEntity entity)
         {
-            return entity.exitCollision.collisionObject;
+            return entity.collision.collisionObject;
         }
 
         protected override void DoAction(GameEntity entity, GameEntity entityToInteract)
         {
-            if (entity.hasInteractObject)
+            if (!entity.hasInteractObject)
             {
-                entity.RemoveInteractObject();
+                entity.AddInteractObject(entityToInteract);
                 if (entity.isPlayer)
-                    SetInteractionTextAlphaValue(entityToInteract, HIDE);
+                    SetInteractionTextAlphaValue(entityToInteract, Constants.SHOW_TEXT);
             }
         }
     }

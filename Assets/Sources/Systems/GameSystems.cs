@@ -14,7 +14,9 @@ public sealed class GameSystems: Feature
         Add(new InteractObjectAddSystem(contexts));
         Add(new InteractObjectRemoveSystem(contexts));
         Add(new InteractTextSystem(contexts));
+        Add(new InteractTextRidingSystem(contexts));
         Add(new InteractTextLookSystem(contexts));
+        Add(new RiderViewSystem(contexts));
         Add(new VehicleRidingSystem(contexts));
         Add(new PlayerAnimationSystem(contexts));
         Add(new PlayerMovementSystem(contexts));

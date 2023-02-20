@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
 
@@ -14,5 +15,15 @@ public class RiderPosition : MonoBehaviour
     public Transform Transform
     {
         get { return gameObject.transform; }
+    }
+
+    private void Start()
+    {
+        
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawSphere(transform.position, 0.05f);
     }
 }

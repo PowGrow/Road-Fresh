@@ -33,26 +33,27 @@ public static class GameComponentsLookup {
     public const int RiderLeftLegPosition = 22;
     public const int RiderRightArmPosition = 23;
     public const int RiderRightLegPosition = 24;
-    public const int Riding = 25;
-    public const int RightArmPosition = 26;
-    public const int RightLegPosition = 27;
-    public const int Rigidbody = 28;
-    public const int Rotation = 29;
-    public const int RotationInput = 30;
-    public const int RotationSpeed = 31;
-    public const int Speed = 32;
-    public const int TryingToControlVehicle = 33;
-    public const int UnmountPosition = 34;
-    public const int Vehicle = 35;
-    public const int VehiclePrefabs = 36;
-    public const int VehicleSetup = 37;
-    public const int VehicleToCreate = 38;
-    public const int VehicleViewData = 39;
-    public const int Velocity = 40;
-    public const int VelocityInput = 41;
-    public const int View = 42;
+    public const int RiderSetted = 25;
+    public const int Riding = 26;
+    public const int RightArmPosition = 27;
+    public const int RightLegPosition = 28;
+    public const int Rigidbody = 29;
+    public const int Rotation = 30;
+    public const int RotationInput = 31;
+    public const int RotationSpeed = 32;
+    public const int Speed = 33;
+    public const int TryingToControlVehicle = 34;
+    public const int UnmountPosition = 35;
+    public const int Vehicle = 36;
+    public const int VehiclePrefabs = 37;
+    public const int VehicleSetup = 38;
+    public const int VehicleToCreate = 39;
+    public const int VehicleViewData = 40;
+    public const int Velocity = 41;
+    public const int VelocityInput = 42;
+    public const int View = 43;
 
-    public const int TotalComponents = 43;
+    public const int TotalComponents = 44;
 
     public static readonly string[] componentNames = {
         "Animated",
@@ -80,6 +81,7 @@ public static class GameComponentsLookup {
         "RiderLeftLegPosition",
         "RiderRightArmPosition",
         "RiderRightLegPosition",
+        "RiderSetted",
         "Riding",
         "RightArmPosition",
         "RightLegPosition",
@@ -126,6 +128,7 @@ public static class GameComponentsLookup {
         typeof(RiderLeftLegPositionComponent),
         typeof(RiderRightArmPositionComponent),
         typeof(RiderRightLegPositionComponent),
+        typeof(RiderSettedComponent),
         typeof(RidingComponent),
         typeof(RightArmPositionComponent),
         typeof(RightLegPositionComponent),
