@@ -6,7 +6,7 @@ namespace RoadFresh.View
     {
         public static void AddComponents(GameEntity entity, GameObject gameObject)
         {
-            entity.AddRigidbody(gameObject.GetComponent<Rigidbody>());
+            entity.AddRigidbodyUnderControl(gameObject.GetComponent<Rigidbody>());
         }
     }
 }

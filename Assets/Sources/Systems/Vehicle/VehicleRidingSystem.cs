@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using Entitas;
 using UnityEngine;
-using RoadFresh.Interactions;
 using RoadFresh.Vehicle.Physics;
 
 namespace RoadFresh.Vehicle
@@ -51,18 +50,17 @@ namespace RoadFresh.Vehicle
 
         private void ChangeRiderState(bool isMounting, GameEntity riderEntity)
         {
-            riderEntity.rigidbody.value.velocity = Vector3.zero;
             riderEntity.isRiding = isMounting;
             var vehicleEntity = riderEntity.interactObject.value;
-            vehicleEntity.rigidbody.value.isKinematic = !isMounting;
+            vehicleEntity.rigidbodyUnderControl.value.isKinematic = !isMounting;
             if (isMounting)
             {
-                riderEntity.rigidbody.value = vehicleEntity.view.value.gameObject.GetComponent<Rigidbody>();
+                riderEntity.rigidbodyUnderControl.value = vehicleEntity.rigidbodyUnderControl.value;
                 _steeringWheel = new SteeringWheel(vehicleEntity, _contexts);
             }
             else
             { 
-                riderEntity.rigidbody.value = riderEntity.view.value.gameObject.GetComponent<Rigidbody>();
+                riderEntity.rigidbodyUnderControl.value = riderEntity.riderRigidbody.value;
             }
             riderEntity.isTryingToControlVehicle = false;
         }

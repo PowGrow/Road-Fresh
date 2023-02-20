@@ -28,32 +28,34 @@ public static class GameComponentsLookup {
     public const int Player = 17;
     public const int Position = 18;
     public const int Resource = 19;
-    public const int Rider = 20;
-    public const int RiderLeftArmPosition = 21;
-    public const int RiderLeftLegPosition = 22;
-    public const int RiderRightArmPosition = 23;
-    public const int RiderRightLegPosition = 24;
-    public const int RiderSetted = 25;
-    public const int Riding = 26;
-    public const int RightArmPosition = 27;
-    public const int RightLegPosition = 28;
-    public const int Rigidbody = 29;
-    public const int Rotation = 30;
-    public const int RotationInput = 31;
-    public const int RotationSpeed = 32;
-    public const int Speed = 33;
-    public const int TryingToControlVehicle = 34;
-    public const int UnmountPosition = 35;
-    public const int Vehicle = 36;
-    public const int VehiclePrefabs = 37;
-    public const int VehicleSetup = 38;
-    public const int VehicleToCreate = 39;
-    public const int VehicleViewData = 40;
-    public const int Velocity = 41;
-    public const int VelocityInput = 42;
-    public const int View = 43;
+    public const int RiderCollider = 20;
+    public const int Rider = 21;
+    public const int RiderLeftArmPosition = 22;
+    public const int RiderLeftLegPosition = 23;
+    public const int RiderRightArmPosition = 24;
+    public const int RiderRightLegPosition = 25;
+    public const int RiderRigidbody = 26;
+    public const int RiderSetted = 27;
+    public const int Riding = 28;
+    public const int RightArmPosition = 29;
+    public const int RightLegPosition = 30;
+    public const int RigidbodyUnderControl = 31;
+    public const int Rotation = 32;
+    public const int RotationInput = 33;
+    public const int RotationSpeed = 34;
+    public const int Speed = 35;
+    public const int TryingToControlVehicle = 36;
+    public const int UnmountPosition = 37;
+    public const int Vehicle = 38;
+    public const int VehiclePrefabs = 39;
+    public const int VehicleSetup = 40;
+    public const int VehicleToCreate = 41;
+    public const int VehicleViewData = 42;
+    public const int Velocity = 43;
+    public const int VelocityInput = 44;
+    public const int View = 45;
 
-    public const int TotalComponents = 44;
+    public const int TotalComponents = 46;
 
     public static readonly string[] componentNames = {
         "Animated",
@@ -76,16 +78,18 @@ public static class GameComponentsLookup {
         "Player",
         "Position",
         "Resource",
+        "RiderCollider",
         "Rider",
         "RiderLeftArmPosition",
         "RiderLeftLegPosition",
         "RiderRightArmPosition",
         "RiderRightLegPosition",
+        "RiderRigidbody",
         "RiderSetted",
         "Riding",
         "RightArmPosition",
         "RightLegPosition",
-        "Rigidbody",
+        "RigidbodyUnderControl",
         "Rotation",
         "RotationInput",
         "RotationSpeed",
@@ -123,16 +127,18 @@ public static class GameComponentsLookup {
         typeof(PlayerComponent),
         typeof(PositionComponent),
         typeof(ResourceComponent),
+        typeof(RiderColliderComponent),
         typeof(RiderComponent),
         typeof(RiderLeftArmPositionComponent),
         typeof(RiderLeftLegPositionComponent),
         typeof(RiderRightArmPositionComponent),
         typeof(RiderRightLegPositionComponent),
+        typeof(RiderRigidbodyComponent),
         typeof(RiderSettedComponent),
         typeof(RidingComponent),
         typeof(RightArmPositionComponent),
         typeof(RightLegPositionComponent),
-        typeof(RigidbodyComponent),
+        typeof(RigidbodyUnderControlComponent),
         typeof(RotationComponent),
         typeof(RotationInputComponent),
         typeof(RotationSpeedComponent),

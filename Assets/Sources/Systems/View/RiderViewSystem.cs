@@ -1,7 +1,6 @@
 using Entitas;
 using System;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace RoadFresh.View
 {
@@ -42,7 +41,7 @@ namespace RoadFresh.View
 
             if (isTryingToRide)
             {
-                ChangeRiderPhysics(rider, riderEntity, isTryingToRide);
+                ChangeRiderPhysics(riderEntity, isTryingToRide);
                 rider.transform.parent = vehicle.transform;
                 rider.transform.localPosition = vehicleEntity.mountPosition.value.transform.localPosition;
                 rider.transform.localRotation = vehicleEntity.mountPosition.value.transform.localRotation;
@@ -52,7 +51,7 @@ namespace RoadFresh.View
                 rider.transform.localPosition = vehicleEntity.unmountPosition.value.localPosition;
                 rider.transform.localRotation = vehicleEntity.unmountPosition.value.localRotation;
                 rider.transform.parent = null;
-                ChangeRiderPhysics(rider, riderEntity, isTryingToRide);
+                ChangeRiderPhysics(riderEntity, isTryingToRide);
             }
             var weight = CONSTRAINT_POSITION_WEIGHT * Convert.ToInt32(isTryingToRide);
             riderEntity.riderLeftArmPosition.constraint.data.targetPositionWeight = weight;
@@ -76,10 +75,10 @@ namespace RoadFresh.View
             riderEntity.riderRightLegPosition.value.position = vehicleEntity.rightLegPosition.value.position;
         }
 
-        private void ChangeRiderPhysics(GameObject rider, GameEntity riderEntity, bool isMounting)
+        private void ChangeRiderPhysics(GameEntity riderEntity, bool isMounting)
         {
-            rider.GetComponent<Rigidbody>().isKinematic = isMounting;
-            rider.GetComponent<CapsuleCollider>().enabled = !isMounting;
+            riderEntity.riderRigidbody.value.isKinematic = isMounting;
+            riderEntity.riderCollider.value.enabled = !isMounting;
         }
     }
 }

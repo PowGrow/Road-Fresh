@@ -2,7 +2,7 @@ using Entitas;
 using UnityEngine;
 
 [Game]
-public class RigidbodyUnderControlComponent : IComponent
+public class RiderRigidbodyComponent : IComponent
 {
     public Rigidbody value;
 }
