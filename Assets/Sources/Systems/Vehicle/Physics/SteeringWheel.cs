@@ -8,9 +8,6 @@ namespace RoadFresh.Vehicle.Physics
         private Transform _steeringWheelTransform;
         private Contexts _contexts;
 
-        private const float MAX_ANGLE = 120f;
-        private const float MIN_ANGLE = -120f;
-
         public SteeringWheel(GameEntity vehicleEntity,Contexts contexts)
         {
             _vehicleEntity = vehicleEntity;
@@ -20,19 +17,31 @@ namespace RoadFresh.Vehicle.Physics
 
         private void UpdateWheelRotation(float delta)
         {
-            if(_steeringWheelTransform.rotation.y + delta <=  MAX_ANGLE && _steeringWheelTransform.rotation.y + delta >= MIN_ANGLE)
+            var wheelRotation = InspectorAngleValue(_steeringWheelTransform.localEulerAngles.y);
+            
+            if (wheelRotation + delta <= Constants.WHEEL_MAX_ANGLE && wheelRotation + delta >= Constants.WHEEL_MIN_ANGLE)
                 _steeringWheelTransform.Rotate(new Vector3(0, delta * Constants.STEERING_WHEEL_SPEED, 0));
         }
 
         private void TryToReturnWheelPosition()
         {
-            if(_steeringWheelTransform.rotation.y != 0)
+            var wheelRotation = _steeringWheelTransform.rotation.y;
+            if(wheelRotation != 0)
             {
-                var deltaDirection = new Vector3(0,1,0);
-                if (_steeringWheelTransform.rotation.y > 0)
-                    deltaDirection = -deltaDirection;
-                deltaDirection = deltaDirection * Constants.STEERING_WHEEL_SPEED;
-                _steeringWheelTransform.Rotate(deltaDirection);
+                Debug.Log("Rotation: " + wheelRotation);
+                if(Mathf.Abs(wheelRotation) <= Constants.STEERING_WHEEL_SPEED)
+                {
+                    _steeringWheelTransform.rotation = Quaternion.Euler(Vector3.zero);
+                }
+                else
+                {
+                    var deltaDirection = new Vector3(0, 1, 0);
+                    if (wheelRotation > 0)
+                        deltaDirection = -deltaDirection;
+                    deltaDirection = deltaDirection * Constants.STEERING_WHEEL_SPEED;
+                    _steeringWheelTransform.Rotate(deltaDirection);
+                }
+
             }
         }
 
@@ -40,8 +49,18 @@ namespace RoadFresh.Vehicle.Physics
         {
             if(delta != 0)
                 UpdateWheelRotation(delta);
-            else
-                TryToReturnWheelPosition();
+            //else
+            //    TryToReturnWheelPosition();
         }
+
+        private static float InspectorAngleValue(float angle)
+        {
+            angle %= 360;
+            if (angle > 180)
+                return angle - 360;
+
+            return angle;
+        }
+
     }
 }
