@@ -20,18 +20,19 @@ namespace RoadFresh.Vehicle.Physics
 
         private void UpdateWheelRotation(float delta)
         {
-            _steeringWheelTransform.Rotate(new Vector3(0, Mathf.Clamp(delta,MIN_ANGLE,MAX_ANGLE), 0));
+            if(_steeringWheelTransform.rotation.y + delta <=  MAX_ANGLE && _steeringWheelTransform.rotation.y + delta >= MIN_ANGLE)
+                _steeringWheelTransform.Rotate(new Vector3(0, delta * Constants.STEERING_WHEEL_SPEED, 0));
         }
 
         private void TryToReturnWheelPosition()
         {
-            if(_steeringWheelTransform.rotation.eulerAngles.y != 0)
+            if(_steeringWheelTransform.rotation.y != 0)
             {
-                float delta = 1;
-                if (_steeringWheelTransform.rotation.eulerAngles.y > 0) delta = 1;
-                else delta = -1;
-                delta = delta * _vehicleEntity.vehicleViewData.RotationSpeed * Time.fixedDeltaTime;
-                UpdateWheelRotation(delta);
+                var deltaDirection = new Vector3(0,1,0);
+                if (_steeringWheelTransform.rotation.y > 0)
+                    deltaDirection = -deltaDirection;
+                deltaDirection = deltaDirection * Constants.STEERING_WHEEL_SPEED;
+                _steeringWheelTransform.Rotate(deltaDirection);
             }
         }
 

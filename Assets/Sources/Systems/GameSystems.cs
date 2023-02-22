@@ -2,6 +2,7 @@ using RoadFresh.View;
 using RoadFresh.Vehicle;
 using RoadFresh.Interactions;
 using RoadFresh.Input;
+using RoadFresh.Vehicle.Physics;
 
 public sealed class GameSystems: Feature
 {
@@ -19,6 +20,7 @@ public sealed class GameSystems: Feature
         Add(new RiderViewSystem(contexts));
         Add(new VehicleRidingSystem(contexts));
         Add(new PlayerAnimationSystem(contexts));
+        Add(new VehicleMovmentSystem(contexts));
         Add(new PlayerMovementSystem(contexts));
         Add(new DestroySystem(contexts));
     }

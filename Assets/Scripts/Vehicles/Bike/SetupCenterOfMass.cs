@@ -7,7 +7,7 @@ public class SetupCenterOfMass : MonoBehaviour
     [SerializeField]
     private Rigidbody rb;
 
-    private void FixedUpdate()
+    private void Awake()
     {
         rb.centerOfMass = ceneterOfMass.position;
     }

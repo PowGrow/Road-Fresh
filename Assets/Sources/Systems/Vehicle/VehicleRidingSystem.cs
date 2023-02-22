@@ -8,8 +8,6 @@ namespace RoadFresh.Vehicle
     public sealed class VehicleRidingSystem : ReactiveSystem<GameEntity>
     {
         private Contexts _contexts;
-        private SteeringWheel _steeringWheel;
-
         public VehicleRidingSystem(Contexts contexts) : base(contexts.game)
         {
             _contexts = contexts;
@@ -52,15 +50,16 @@ namespace RoadFresh.Vehicle
         {
             riderEntity.isRiding = isMounting;
             var vehicleEntity = riderEntity.interactObject.value;
-            vehicleEntity.rigidbodyUnderControl.value.isKinematic = !isMounting;
             if (isMounting)
             {
                 riderEntity.rigidbodyUnderControl.value = vehicleEntity.rigidbodyUnderControl.value;
-                _steeringWheel = new SteeringWheel(vehicleEntity, _contexts);
+                var steeringWheel = new SteeringWheel(vehicleEntity, _contexts);
+                riderEntity.AddSteeringWheel(steeringWheel);
             }
             else
             { 
                 riderEntity.rigidbodyUnderControl.value = riderEntity.riderRigidbody.value;
+                riderEntity.RemoveSteeringWheel();
             }
             riderEntity.isTryingToControlVehicle = false;
         }

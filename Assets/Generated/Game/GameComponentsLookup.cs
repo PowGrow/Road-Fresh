@@ -44,18 +44,19 @@ public static class GameComponentsLookup {
     public const int RotationInput = 33;
     public const int RotationSpeed = 34;
     public const int Speed = 35;
-    public const int TryingToControlVehicle = 36;
-    public const int UnmountPosition = 37;
-    public const int Vehicle = 38;
-    public const int VehiclePrefabs = 39;
-    public const int VehicleSetup = 40;
-    public const int VehicleToCreate = 41;
-    public const int VehicleViewData = 42;
-    public const int Velocity = 43;
-    public const int VelocityInput = 44;
-    public const int View = 45;
+    public const int SteeringWheel = 36;
+    public const int TryingToControlVehicle = 37;
+    public const int UnmountPosition = 38;
+    public const int Vehicle = 39;
+    public const int VehiclePrefabs = 40;
+    public const int VehicleSetup = 41;
+    public const int VehicleToCreate = 42;
+    public const int VehicleViewData = 43;
+    public const int Velocity = 44;
+    public const int VelocityInput = 45;
+    public const int View = 46;
 
-    public const int TotalComponents = 46;
+    public const int TotalComponents = 47;
 
     public static readonly string[] componentNames = {
         "Animated",
@@ -94,6 +95,7 @@ public static class GameComponentsLookup {
         "RotationInput",
         "RotationSpeed",
         "Speed",
+        "SteeringWheel",
         "TryingToControlVehicle",
         "UnmountPosition",
         "Vehicle",
@@ -143,6 +145,7 @@ public static class GameComponentsLookup {
         typeof(RotationInputComponent),
         typeof(RotationSpeedComponent),
         typeof(SpeedComponent),
+        typeof(SteeringWheelComponent),
         typeof(TryingToControlVehicleComponent),
         typeof(UnmountPositionComponent),
         typeof(VehicleComponent),
