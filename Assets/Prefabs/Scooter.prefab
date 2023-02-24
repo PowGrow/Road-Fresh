@@ -26,11 +26,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 153390203657428086}
   m_LocalRotation: {x: -0.27773386, y: -0, z: -0, w: 0.96065813}
-  m_LocalPosition: {x: -0.1785, y: -0.6309999, z: -0.18149996}
+  m_LocalPosition: {x: -0.1785, y: -1.0579998, z: 0.4245}
   m_LocalScale: {x: 0.072180495, y: 0.30642444, z: 0.0721805}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3136305683488380229}
+  m_Father: {fileID: 2604757066940608497}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -32.25, y: 0, z: 0}
 --- !u!33 &6924132284528308472
@@ -383,7 +383,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3786687248440463783}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -45, y: 0, z: 0}
 --- !u!33 &1654366665759345152
 MeshFilter:
@@ -667,7 +667,7 @@ Transform:
   - {fileID: 1407531581510134380}
   - {fileID: 5327314781449018105}
   m_Father: {fileID: 3786687248440463783}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2375689906251149877
 GameObject:
@@ -944,6 +944,39 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &2530674196584490154
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3321920774398577982}
+  m_Layer: 0
+  m_Name: Wheel Colliders
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3321920774398577982
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2530674196584490154}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3136305683488380229}
+  - {fileID: 8064456252688920555}
+  m_Father: {fileID: 4580924897740365751}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2816115257033130260
 GameObject:
   m_ObjectHideFlags: 0
@@ -1074,6 +1107,39 @@ Transform:
   - {fileID: 3986160815835906137}
   - {fileID: 5239948314137318068}
   - {fileID: 6722714270003224847}
+  m_Father: {fileID: 3786687248440463783}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3004579179315271201
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2604757066940608497}
+  m_Layer: 0
+  m_Name: Front Wheel View
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2604757066940608497
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3004579179315271201}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7419748299194947644}
+  - {fileID: 4827674339835821821}
   m_Father: {fileID: 3786687248440463783}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1262,7 +1328,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3786687248440463783}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -14.878, y: 0, z: 0}
 --- !u!114 &7061251961412466776
 MonoBehaviour:
@@ -1507,7 +1573,7 @@ Transform:
   - {fileID: 4041997782175846908}
   - {fileID: 5544876634119512011}
   - {fileID: 95038060377386097}
-  - {fileID: 8064456252688920555}
+  - {fileID: 3321920774398577982}
   - {fileID: 2299988539133338539}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1528,8 +1594,10 @@ MonoBehaviour:
   rotationSpeed: 10
   bodyTransform: {fileID: 95038060377386097}
   steeringWheelTransform: {fileID: 3786687248440463783}
-  frontWheelTransform: {fileID: 7419748299194947644}
-  backWheelTransform: {fileID: 7891628069131145858}
+  frontWheelViewTransform: {fileID: 2604757066940608497}
+  rearWheelViewTransform: {fileID: 7891628069131145858}
+  frontWheelCollider: {fileID: 5682942032086169114}
+  rearWheelCollider: {fileID: 8339291651741306833}
   baseMaterial: {fileID: 2100000, guid: c68cc1f7fe064ac4e8840217ce0faae6, type: 2}
 --- !u!114 &4398023769182428169
 MonoBehaviour:
@@ -2184,14 +2252,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5729281102524358338}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.9, z: 0}
+  m_LocalPosition: {x: 0, y: -1.3269999, z: 0.60599995}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4277374163718627405}
   - {fileID: 1270958785397108925}
   - {fileID: 339625732939282949}
-  m_Father: {fileID: 3136305683488380229}
+  m_Father: {fileID: 2604757066940608497}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2827032179105173612
@@ -2237,6 +2305,7 @@ Transform:
   m_Children:
   - {fileID: 5531799560162969724}
   - {fileID: 3786687248440463783}
+  - {fileID: 7891628069131145858}
   m_Father: {fileID: 4580924897740365751}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2431,7 +2500,7 @@ GameObject:
   - component: {fileID: 7891628069131145858}
   - component: {fileID: 2624239948153409318}
   m_Layer: 0
-  m_Name: Rear Wheel
+  m_Name: Rear Wheel View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2445,14 +2514,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7034675706508706387}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.9, z: 0}
+  m_LocalPosition: {x: 0, y: 0.32000005, z: -1}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5293660296103354776}
   - {fileID: 8560818442995151396}
-  m_Father: {fileID: 8064456252688920555}
-  m_RootOrder: 0
+  m_Father: {fileID: 95038060377386097}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2624239948153409318
 MonoBehaviour:
@@ -2678,7 +2747,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3786687248440463783}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -19.499, y: 0, z: 0}
 --- !u!33 &4496255825977756827
 MeshFilter:
@@ -2994,12 +3063,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3136305683488380229}
   - {fileID: 6603213639210549481}
   - {fileID: 1754254135741165934}
   - {fileID: 7193142395793765851}
   - {fileID: 9182522573872555277}
   - {fileID: 5214141825302312768}
+  - {fileID: 2604757066940608497}
   m_Father: {fileID: 95038060377386097}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3169,13 +3238,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8198518461320825402}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.42699993, z: 0.60599995}
+  m_LocalPosition: {x: 0, y: 1.1000001, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 7419748299194947644}
-  - {fileID: 4827674339835821821}
-  m_Father: {fileID: 3786687248440463783}
+  m_Children: []
+  m_Father: {fileID: 3321920774398577982}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!146 &5682942032086169114
@@ -3714,10 +3781,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 1.22, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 7891628069131145858}
-  m_Father: {fileID: 4580924897740365751}
-  m_RootOrder: 3
+  m_Children: []
+  m_Father: {fileID: 3321920774398577982}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!146 &8339291651741306833
 WheelCollider:

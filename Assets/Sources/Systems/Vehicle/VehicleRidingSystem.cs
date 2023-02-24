@@ -54,12 +54,17 @@ namespace RoadFresh.Vehicle
             {
                 riderEntity.rigidbodyUnderControl.value = vehicleEntity.rigidbodyUnderControl.value;
                 var steeringWheel = new SteeringWheel(vehicleEntity, _contexts);
-                riderEntity.AddSteeringWheel(steeringWheel);
+                var engine = new Engine(vehicleEntity, _contexts);
+                vehicleEntity.AddSteeringWheel(steeringWheel);
+                vehicleEntity.AddEngine(engine);
+                vehicleEntity.AddGear(Gear.N);
             }
             else
             { 
                 riderEntity.rigidbodyUnderControl.value = riderEntity.riderRigidbody.value;
-                riderEntity.RemoveSteeringWheel();
+                vehicleEntity.RemoveSteeringWheel();
+                vehicleEntity.RemoveEngine();
+                vehicleEntity.RemoveGear();
             }
             riderEntity.isTryingToControlVehicle = false;
         }

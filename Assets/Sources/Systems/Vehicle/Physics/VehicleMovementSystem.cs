@@ -20,7 +20,9 @@ namespace RoadFresh.Vehicle.Physics
         {
             foreach (var entity in _group)
             {
-                entity.steeringWheel.value.RotateSteeringWheel(entity.rotationInput.value);
+                var vehicleEntity = entity.interactObject.value;
+                vehicleEntity.steeringWheel.value.RotateSteeringWheel(entity.rotationInput.value);
+                vehicleEntity.engine.value.ControllEngine(entity.velocityInput.value.z);
             }
         }
     }

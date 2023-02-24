@@ -7,12 +7,14 @@ namespace RoadFresh.View
         public static void AddComponents(GameEntity entity, GameObject gameObject)
         {
             var vehicleSetupData = gameObject.GetComponentInChildren<Vespa>();
-            entity.AddVehicleViewData(  vehicleSetupData.Speed, 
-                                        vehicleSetupData.RotationSpeed, 
-                                        vehicleSetupData.Body, 
-                                        vehicleSetupData.SteeringWheel, 
-                                        vehicleSetupData.FrontWheel, 
-                                        vehicleSetupData.BackWheel);
+            entity.AddVehicleViewData(vehicleSetupData.Speed,
+                                        vehicleSetupData.RotationSpeed,
+                                        vehicleSetupData.Body,
+                                        vehicleSetupData.SteeringWheel,
+                                        vehicleSetupData.FrontWheelView,
+                                        vehicleSetupData.RearWheelView,
+                                        vehicleSetupData.FrontWheelCollider,
+                                        vehicleSetupData.RearWheelCollider);
             entity.AddSpeed(entity.vehicleViewData.Speed);
             entity.AddRotationSpeed(entity.vehicleViewData.RotationSpeed);
             entity.AddUnmountPosition(gameObject.GetComponentInChildren<UnmountPosition>().Transform);

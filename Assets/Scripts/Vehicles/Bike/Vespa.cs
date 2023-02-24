@@ -11,9 +11,13 @@ public sealed class Vespa : MonoBehaviour, IScooterSetup
     [SerializeField]
     private Transform steeringWheelTransform;
     [SerializeField]
-    private Transform frontWheelTransform;
+    private Transform frontWheelViewTransform;
     [SerializeField]
-    private Transform backWheelTransform;
+    private Transform rearWheelViewTransform;
+    [SerializeField]
+    private WheelCollider frontWheelCollider;
+    [SerializeField]
+    private WheelCollider rearWheelCollider;
     [SerializeField]
     private Material baseMaterial;
     public float Speed 
@@ -32,13 +36,21 @@ public sealed class Vespa : MonoBehaviour, IScooterSetup
     {
         get { return steeringWheelTransform; }
     }
-    public Transform FrontWheel
+    public Transform FrontWheelView
     {
-        get { return frontWheelTransform; }
+        get { return frontWheelViewTransform; }
     }
-    public Transform BackWheel
+    public Transform RearWheelView
     {
-        get { return backWheelTransform; }
+        get { return rearWheelViewTransform; }
+    }
+    public WheelCollider FrontWheelCollider
+    {
+        get { return frontWheelCollider; }
+    }
+    public WheelCollider RearWheelCollider
+    {
+        get { return rearWheelCollider; }
     }
     public Material BaseMaterial
     {

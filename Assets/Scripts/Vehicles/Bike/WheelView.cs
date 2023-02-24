@@ -12,7 +12,7 @@ public class WheelView : MonoBehaviour
 
         wheelPhysic.GetWorldPose(out position, out rotation);
 
-        transform.position = position;
-        transform.rotation = rotation;
+        transform.position = new Vector3(transform.position.x, position.y, transform.position.z);
+        transform.rotation = Quaternion.Euler(rotation.eulerAngles.x, transform.rotation.eulerAngles.y , rotation.eulerAngles.z);
     }
 }

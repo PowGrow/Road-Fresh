@@ -10,4 +10,6 @@ public class VehicleViewDataComponent : IComponent
     public Transform SteeringWheelTransform;
     public Transform FrontWheelTransform;
     public Transform BackWheelTransform;
+    public WheelCollider FrontWheelCollider;
+    public WheelCollider RearWheelCollider;
 }

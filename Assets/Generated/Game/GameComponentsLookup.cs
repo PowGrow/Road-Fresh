@@ -12,59 +12,63 @@ public static class GameComponentsLookup {
     public const int Animator = 1;
     public const int Collision = 2;
     public const int Destroy = 3;
-    public const int ExitCollision = 4;
-    public const int GameSetup = 5;
-    public const int InitialPoistion = 6;
-    public const int Interactable = 7;
-    public const int InteractObject = 8;
-    public const int InteractTextCanvas = 9;
-    public const int InteractText = 10;
-    public const int LeftArmPosition = 11;
-    public const int LeftLegPosition = 12;
-    public const int Lock = 13;
-    public const int MainCamera = 14;
-    public const int MountPosition = 15;
-    public const int Physic = 16;
-    public const int Player = 17;
-    public const int Position = 18;
-    public const int Resource = 19;
-    public const int RiderCollider = 20;
-    public const int Rider = 21;
-    public const int RiderLeftArmPosition = 22;
-    public const int RiderLeftLegPosition = 23;
-    public const int RiderRightArmPosition = 24;
-    public const int RiderRightLegPosition = 25;
-    public const int RiderRigidbody = 26;
-    public const int RiderSetted = 27;
-    public const int Riding = 28;
-    public const int RightArmPosition = 29;
-    public const int RightLegPosition = 30;
-    public const int RigidbodyUnderControl = 31;
-    public const int Rotation = 32;
-    public const int RotationInput = 33;
-    public const int RotationSpeed = 34;
-    public const int Speed = 35;
-    public const int SteeringWheel = 36;
-    public const int TryingToControlVehicle = 37;
-    public const int UnmountPosition = 38;
-    public const int Vehicle = 39;
-    public const int VehiclePrefabs = 40;
-    public const int VehicleSetup = 41;
-    public const int VehicleToCreate = 42;
-    public const int VehicleViewData = 43;
-    public const int Velocity = 44;
-    public const int VelocityInput = 45;
-    public const int View = 46;
+    public const int Engine = 4;
+    public const int ExitCollision = 5;
+    public const int GameSetup = 6;
+    public const int Gear = 7;
+    public const int InitialPoistion = 8;
+    public const int Interactable = 9;
+    public const int InteractObject = 10;
+    public const int InteractTextCanvas = 11;
+    public const int InteractText = 12;
+    public const int LeftArmPosition = 13;
+    public const int LeftLegPosition = 14;
+    public const int Lock = 15;
+    public const int MainCamera = 16;
+    public const int MountPosition = 17;
+    public const int Physic = 18;
+    public const int Player = 19;
+    public const int Position = 20;
+    public const int Resource = 21;
+    public const int RiderCollider = 22;
+    public const int Rider = 23;
+    public const int RiderLeftArmPosition = 24;
+    public const int RiderLeftLegPosition = 25;
+    public const int RiderRightArmPosition = 26;
+    public const int RiderRightLegPosition = 27;
+    public const int RiderRigidbody = 28;
+    public const int RiderSetted = 29;
+    public const int Riding = 30;
+    public const int RightArmPosition = 31;
+    public const int RightLegPosition = 32;
+    public const int RigidbodyUnderControl = 33;
+    public const int Rotation = 34;
+    public const int RotationInput = 35;
+    public const int RotationSpeed = 36;
+    public const int Speed = 37;
+    public const int SteeringWheel = 38;
+    public const int TryingToControlVehicle = 39;
+    public const int UnmountPosition = 40;
+    public const int Vehicle = 41;
+    public const int VehiclePrefabs = 42;
+    public const int VehicleSetup = 43;
+    public const int VehicleToCreate = 44;
+    public const int VehicleViewData = 45;
+    public const int Velocity = 46;
+    public const int VelocityInput = 47;
+    public const int View = 48;
 
-    public const int TotalComponents = 47;
+    public const int TotalComponents = 49;
 
     public static readonly string[] componentNames = {
         "Animated",
         "Animator",
         "Collision",
         "Destroy",
+        "Engine",
         "ExitCollision",
         "GameSetup",
+        "Gear",
         "InitialPoistion",
         "Interactable",
         "InteractObject",
@@ -113,8 +117,10 @@ public static class GameComponentsLookup {
         typeof(AnimatorComponent),
         typeof(CollisionComponent),
         typeof(DestroyComponent),
+        typeof(EngineComponent),
         typeof(ExitCollisionComponent),
         typeof(GameSetupComponent),
+        typeof(GearComponent),
         typeof(InitialPoistionComponent),
         typeof(InteractableComponent),
         typeof(InteractObjectComponent),

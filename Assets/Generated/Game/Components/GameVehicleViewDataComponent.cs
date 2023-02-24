@@ -11,7 +11,7 @@ public partial class GameEntity {
     public VehicleViewDataComponent vehicleViewData { get { return (VehicleViewDataComponent)GetComponent(GameComponentsLookup.VehicleViewData); } }
     public bool hasVehicleViewData { get { return HasComponent(GameComponentsLookup.VehicleViewData); } }
 
-    public void AddVehicleViewData(float newSpeed, float newRotationSpeed, UnityEngine.Transform newBodyTransform, UnityEngine.Transform newSteeringWheelTransform, UnityEngine.Transform newFrontWheelTransform, UnityEngine.Transform newBackWheelTransform) {
+    public void AddVehicleViewData(float newSpeed, float newRotationSpeed, UnityEngine.Transform newBodyTransform, UnityEngine.Transform newSteeringWheelTransform, UnityEngine.Transform newFrontWheelTransform, UnityEngine.Transform newBackWheelTransform, UnityEngine.WheelCollider newFrontWheelCollider, UnityEngine.WheelCollider newRearWheelCollider) {
         var index = GameComponentsLookup.VehicleViewData;
         var component = (VehicleViewDataComponent)CreateComponent(index, typeof(VehicleViewDataComponent));
         component.Speed = newSpeed;
@@ -20,10 +20,12 @@ public partial class GameEntity {
         component.SteeringWheelTransform = newSteeringWheelTransform;
         component.FrontWheelTransform = newFrontWheelTransform;
         component.BackWheelTransform = newBackWheelTransform;
+        component.FrontWheelCollider = newFrontWheelCollider;
+        component.RearWheelCollider = newRearWheelCollider;
         AddComponent(index, component);
     }
 
-    public void ReplaceVehicleViewData(float newSpeed, float newRotationSpeed, UnityEngine.Transform newBodyTransform, UnityEngine.Transform newSteeringWheelTransform, UnityEngine.Transform newFrontWheelTransform, UnityEngine.Transform newBackWheelTransform) {
+    public void ReplaceVehicleViewData(float newSpeed, float newRotationSpeed, UnityEngine.Transform newBodyTransform, UnityEngine.Transform newSteeringWheelTransform, UnityEngine.Transform newFrontWheelTransform, UnityEngine.Transform newBackWheelTransform, UnityEngine.WheelCollider newFrontWheelCollider, UnityEngine.WheelCollider newRearWheelCollider) {
         var index = GameComponentsLookup.VehicleViewData;
         var component = (VehicleViewDataComponent)CreateComponent(index, typeof(VehicleViewDataComponent));
         component.Speed = newSpeed;
@@ -32,6 +34,8 @@ public partial class GameEntity {
         component.SteeringWheelTransform = newSteeringWheelTransform;
         component.FrontWheelTransform = newFrontWheelTransform;
         component.BackWheelTransform = newBackWheelTransform;
+        component.FrontWheelCollider = newFrontWheelCollider;
+        component.RearWheelCollider = newRearWheelCollider;
         ReplaceComponent(index, component);
     }
 

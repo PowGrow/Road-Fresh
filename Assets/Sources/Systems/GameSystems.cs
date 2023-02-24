@@ -21,6 +21,7 @@ public sealed class GameSystems: Feature
         Add(new VehicleRidingSystem(contexts));
         Add(new PlayerAnimationSystem(contexts));
         Add(new VehicleMovmentSystem(contexts));
+        Add(new GearSystem(contexts));
         Add(new PlayerMovementSystem(contexts));
         Add(new DestroySystem(contexts));
     }
