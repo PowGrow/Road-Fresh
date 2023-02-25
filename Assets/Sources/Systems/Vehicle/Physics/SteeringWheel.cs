@@ -28,7 +28,7 @@ namespace RoadFresh.Vehicle.Physics
             {
                 if(Mathf.Abs(_wheelRotation) <= Constants.STEERING_WHEEL_SPEED)
                 {
-                    _steeringWheelTransform.rotation = Quaternion.Euler(Vector3.zero);
+                    _steeringWheelTransform.Rotate(new Vector3(0, -Mathf.Sign(_wheelRotation) * _wheelRotation, 0));
                 }
                 else
                 {

@@ -23,6 +23,10 @@ namespace RoadFresh.Vehicle.Physics
                 var vehicleEntity = entity.interactObject.value;
                 vehicleEntity.steeringWheel.value.RotateSteeringWheel(entity.rotationInput.value);
                 vehicleEntity.engine.value.ControllEngine(entity.velocityInput.value.z);
+
+                if(vehicleEntity.gear.value != Gear.N)
+                    vehicleEntity.vehicleViewData.RearWheelCollider.motorTorque = ((((float)vehicleEntity.gear.value / 10) + Mathf.Sign((int)vehicleEntity.gear.value)) * vehicleEntity.engine.value.RPM) / 1000;
+
             }
         }
     }
