@@ -19,22 +19,25 @@ public static class GameComponentsLookup {
     public const int Destroyed = 8;
     public const int DestroyRoadCollision = 9;
     public const int Fell = 10;
-    public const int GamePaused = 11;
-    public const int ObastacleCollision = 12;
-    public const int OutOfBorder = 13;
-    public const int Player = 14;
-    public const int PlayerSetup = 15;
-    public const int Position = 16;
-    public const int Resource = 17;
-    public const int Rigidbody = 18;
-    public const int Road = 19;
-    public const int RoadSetup = 20;
-    public const int StrafeInput = 21;
-    public const int StrafeSpeed = 22;
-    public const int UnityRigs = 23;
-    public const int View = 24;
+    public const int GameData = 11;
+    public const int GameOver = 12;
+    public const int GamePaused = 13;
+    public const int ObstacleCollision = 14;
+    public const int ObstaclePassedCollision = 15;
+    public const int OutOfBorder = 16;
+    public const int Player = 17;
+    public const int PlayerSetup = 18;
+    public const int Position = 19;
+    public const int Resource = 20;
+    public const int Rigidbody = 21;
+    public const int Road = 22;
+    public const int RoadSetup = 23;
+    public const int StrafeInput = 24;
+    public const int StrafeSpeed = 25;
+    public const int UnityRigs = 26;
+    public const int View = 27;
 
-    public const int TotalComponents = 25;
+    public const int TotalComponents = 28;
 
     public static readonly string[] componentNames = {
         "AddBackgroundCollision",
@@ -48,8 +51,11 @@ public static class GameComponentsLookup {
         "Destroyed",
         "DestroyRoadCollision",
         "Fell",
+        "GameData",
+        "GameOver",
         "GamePaused",
-        "ObastacleCollision",
+        "ObstacleCollision",
+        "ObstaclePassedCollision",
         "OutOfBorder",
         "Player",
         "PlayerSetup",
@@ -76,8 +82,11 @@ public static class GameComponentsLookup {
         typeof(DestroyedComponent),
         typeof(DestroyRoadCollisionComponent),
         typeof(FellComponent),
+        typeof(GameDataComponent),
+        typeof(GameOverComponent),
         typeof(GamePausedComponent),
-        typeof(ObastacleCollisionComponent),
+        typeof(ObstacleCollisionComponent),
+        typeof(ObstaclePassedCollisionComponent),
         typeof(OutOfBorderComponent),
         typeof(PlayerComponent),
         typeof(PlayerSetupComponent),

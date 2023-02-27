@@ -17,7 +17,7 @@ public class RoadMoveSystem : IExecuteSystem
     {
         foreach (var entity in _group)
         {
-            if(entity.hasView && !_contexts.game.isGamePaused)
+            if(entity.hasView)
             {
                 entity.view.value.transform.Translate(new Vector3(0,0,-_contexts.game.roadSetup.value.RoadSpeed) * Time.deltaTime);
                 entity.ReplacePosition(entity.view.value.transform.position);

@@ -156,6 +156,7 @@ MonoBehaviour:
   playerSetup: {fileID: 11400000, guid: e94957929c6d7414392cdbac3025aeb2, type: 2}
   roadSetup: {fileID: 11400000, guid: 568eef0015adc20418facd83d50d0a1d, type: 2}
   backgroundSetup: {fileID: 11400000, guid: 1f1ca79e6b64e1f489b72838c631ab43, type: 2}
+  gameData: {fileID: 11400000, guid: 3559692105285de4ab2ca7fd14ea1331, type: 2}
 --- !u!4 &203020935
 Transform:
   m_ObjectHideFlags: 0

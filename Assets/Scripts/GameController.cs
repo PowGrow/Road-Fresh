@@ -1,4 +1,5 @@
 using Entitas;
+using UnityEditor.Rendering.LookDev;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
@@ -9,20 +10,27 @@ public class GameController : MonoBehaviour
     private RoadSetup roadSetup;
     [SerializeField]
     private BackgroundSetup backgroundSetup;
+    [SerializeField]
+    private GameData gameData;
     private Systems _systems;
+    private Contexts _contexts;
 
     private void Start()
     {
-        var contexts = Contexts.sharedInstance;
-        _systems = new GameSystems(contexts);
-        contexts.game.SetPlayerSetup(playerSetup);
-        contexts.game.SetRoadSetup(roadSetup);
-        contexts.game.SetBackgroundSetup(backgroundSetup);
+        _contexts = Contexts.sharedInstance;
+        _systems = new GameSystems(_contexts);
+        _contexts.game.SetPlayerSetup(playerSetup);
+        _contexts.game.SetRoadSetup(roadSetup);
+        _contexts.game.SetBackgroundSetup(backgroundSetup);
+        _contexts.game.SetGameData(gameData);
         _systems.Initialize();
     }
 
     private void Update()
     {
-        _systems.Execute();
+        if (!_contexts.game.isGamePaused)
+        {
+            _systems.Execute();
+        }
     }
 }

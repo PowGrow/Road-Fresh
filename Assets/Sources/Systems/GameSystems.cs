@@ -9,11 +9,13 @@ public sealed class GameSystems: Feature
         Add(new BackgroundInitializeSystem(contexts));
         Add(new PlayerInitializeSystem(contexts));
         Add(new ViewInitializeSystem(contexts));
+        Add(new GameSpeedSystem(contexts));
         //Execute
         Add(new RoadMoveSystem(contexts));
         Add(new BackgroundMoveSystem(contexts));
         Add(new PlayerMoveSystem(contexts));
         //Reactive
+        Add(new ObstacleCounterSystem(contexts));
         Add(new PlayerFallSystem(contexts));
         Add(new DestroySystem(contexts));
         Add(new RoadAddSystem(contexts));
