@@ -34,6 +34,7 @@ public class PlayerFallSystem : ReactiveSystem<GameEntity>
             entity.unityRigs.value.UnityRigsTransform.gameObject.SetActive(false);
             entity.animator.value.SetTrigger(SCOOTER_CRUSH_TRIGGER);
             entity.unityRigs.value.CharacterAnimator.SetTrigger(CHARACTER_FALLEN_TRIGGER);
+            _contexts.game.isGameOver = true;
         }
     }
 }
