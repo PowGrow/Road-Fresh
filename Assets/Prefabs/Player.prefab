@@ -991,7 +991,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1220685621667492887}
   m_LocalRotation: {x: 0.46113664, y: -0.5360532, z: -0.46113664, w: 0.5360532}
-  m_LocalPosition: {x: 0, y: 88.717606, z: 0.80001354}
+  m_LocalPosition: {x: 0, y: 88.71761, z: 0.80001354}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1056,7 +1056,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1220685621667492891}
-  m_LocalRotation: {x: -0.08536614, y: -0.08919482, z: 0.31178835, w: 0.942096}
+  m_LocalRotation: {x: -0.085366145, y: -0.08919483, z: 0.31178838, w: 0.94209605}
   m_LocalPosition: {x: 3.5133245, y: -0.00001997848, z: 0.0000014853608}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1404,7 +1404,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1220685621667492913}
-  m_LocalRotation: {x: 0.30648223, y: 0.60140944, z: -0.047874656, w: 0.7362632}
+  m_LocalRotation: {x: 0.30648223, y: 0.6014094, z: -0.047874656, w: 0.73626316}
   m_LocalPosition: {x: -13.197872, y: -4.8572257e-17, z: -2.6645353e-15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1500,7 +1500,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1220685621667492919}
-  m_LocalRotation: {x: 0.9984873, y: 0.054984547, z: 1.317589e-15, w: 1.338819e-16}
+  m_LocalRotation: {x: -0.9984872, y: -0.05498509, z: 0, w: 0}
   m_LocalPosition: {x: -18.151169, y: 1.5543122e-15, z: -7.1010728e-15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1629,7 +1629,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1220685621667492927}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.41800022, z: -0.28900003}
+  m_LocalPosition: {x: 0, y: -0.41800022, z: -0.289}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1829,7 +1829,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1220685621667492979}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fff0960ef4ea6e04eac66b4a7fd2189d, type: 3}
   m_Name: 
@@ -1851,7 +1851,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1220685621667492979}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2d8418b0b9634b1892b0268dd9c2743, type: 3}
   m_Name: 
@@ -2356,7 +2356,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1220685621667493327}
-  m_LocalRotation: {x: -0.30403566, y: -0.63749987, z: 0.2518469, w: 0.66161114}
+  m_LocalRotation: {x: -0.3040357, y: -0.6374999, z: 0.25184694, w: 0.6616112}
   m_LocalPosition: {x: -6.370214, y: -6.1062266e-16, z: 4.440892e-16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2647,6 +2647,7 @@ GameObject:
   - component: {fileID: 3308012745883620078}
   - component: {fileID: 6314381009640196446}
   - component: {fileID: 7902221152085989482}
+  - component: {fileID: 2322121497383564848}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2732,6 +2733,21 @@ CapsuleCollider:
   m_Height: 1.5
   m_Direction: 2
   m_Center: {x: 0, y: 0.3, z: 0.15}
+--- !u!114 &2322121497383564848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2860448652223071225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40d8d276985007e4a9dbbd8f6f6cac06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigBuilder: {fileID: 1220685621099917037}
+  _unityRigsTransform: {fileID: 1220685621040567964}
+  _characterAnimator: {fileID: 1220685621660190633}
 --- !u!1 &2984064683318686763
 GameObject:
   m_ObjectHideFlags: 0

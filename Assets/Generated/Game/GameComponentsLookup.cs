@@ -14,23 +14,27 @@ public static class GameComponentsLookup {
     public const int Animator = 3;
     public const int Background = 4;
     public const int BackgroundSetup = 5;
-    public const int DestroyBackgroundCollision = 6;
-    public const int Destroyed = 7;
-    public const int DestroyRoadCollision = 8;
-    public const int GamePaused = 9;
-    public const int OutOfBorder = 10;
-    public const int Player = 11;
-    public const int PlayerSetup = 12;
-    public const int Position = 13;
-    public const int Resource = 14;
-    public const int Rigidbody = 15;
-    public const int Road = 16;
-    public const int RoadSetup = 17;
-    public const int StrafeInput = 18;
-    public const int StrafeSpeed = 19;
-    public const int View = 20;
+    public const int CharacterAnimator = 6;
+    public const int DestroyBackgroundCollision = 7;
+    public const int Destroyed = 8;
+    public const int DestroyRoadCollision = 9;
+    public const int Fell = 10;
+    public const int GamePaused = 11;
+    public const int ObastacleCollision = 12;
+    public const int OutOfBorder = 13;
+    public const int Player = 14;
+    public const int PlayerSetup = 15;
+    public const int Position = 16;
+    public const int Resource = 17;
+    public const int Rigidbody = 18;
+    public const int Road = 19;
+    public const int RoadSetup = 20;
+    public const int StrafeInput = 21;
+    public const int StrafeSpeed = 22;
+    public const int UnityRigs = 23;
+    public const int View = 24;
 
-    public const int TotalComponents = 21;
+    public const int TotalComponents = 25;
 
     public static readonly string[] componentNames = {
         "AddBackgroundCollision",
@@ -39,10 +43,13 @@ public static class GameComponentsLookup {
         "Animator",
         "Background",
         "BackgroundSetup",
+        "CharacterAnimator",
         "DestroyBackgroundCollision",
         "Destroyed",
         "DestroyRoadCollision",
+        "Fell",
         "GamePaused",
+        "ObastacleCollision",
         "OutOfBorder",
         "Player",
         "PlayerSetup",
@@ -53,6 +60,7 @@ public static class GameComponentsLookup {
         "RoadSetup",
         "StrafeInput",
         "StrafeSpeed",
+        "UnityRigs",
         "View"
     };
 
@@ -63,10 +71,13 @@ public static class GameComponentsLookup {
         typeof(AnimatorComponent),
         typeof(BackgroundComponent),
         typeof(BackgroundSetupComponent),
+        typeof(CharacterAnimatorComponent),
         typeof(DestroyBackgroundCollisionComponent),
         typeof(DestroyedComponent),
         typeof(DestroyRoadCollisionComponent),
+        typeof(FellComponent),
         typeof(GamePausedComponent),
+        typeof(ObastacleCollisionComponent),
         typeof(OutOfBorderComponent),
         typeof(PlayerComponent),
         typeof(PlayerSetupComponent),
@@ -77,6 +88,7 @@ public static class GameComponentsLookup {
         typeof(RoadSetupComponent),
         typeof(StrafeInputComponent),
         typeof(StrafeSpeedComponent),
+        typeof(UnityRigsComponent),
         typeof(ViewComponent)
     };
 }

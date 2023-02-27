@@ -2,7 +2,7 @@ using UnityEngine;
 using Entitas;
 
 [Game]
-public class AddBackgroundCollisionComponent : IComponent
+public class ObastacleCollisionComponent : IComponent
 {
     public GameObject collisionObject;
     public GameObject collisionSource;

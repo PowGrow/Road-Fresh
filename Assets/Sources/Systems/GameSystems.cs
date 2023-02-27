@@ -14,6 +14,7 @@ public sealed class GameSystems: Feature
         Add(new BackgroundMoveSystem(contexts));
         Add(new PlayerMoveSystem(contexts));
         //Reactive
+        Add(new PlayerFallSystem(contexts));
         Add(new DestroySystem(contexts));
         Add(new RoadAddSystem(contexts));
         Add(new RoadDestroySystem(contexts));

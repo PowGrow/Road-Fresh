@@ -2,6 +2,7 @@ using Entitas;
 using Entitas.Unity;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations.Rigging;
 
 namespace RoadFresh.View
 {
@@ -34,7 +35,10 @@ namespace RoadFresh.View
                 if(entity.hasPosition)
                     gameObject.transform.position = entity.position.value;
                 if (entity.isPlayer)
+                {
                     entity.AddRigidbody(gameObject.GetComponent<Rigidbody>());
+                    entity.AddUnityRigs(gameObject.GetComponent<UnityRigs>());
+                }
                 if (entity.isAnimated)
                     entity.AddAnimator(gameObject.GetComponent<Animator>());
             }
