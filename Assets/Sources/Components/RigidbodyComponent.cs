@@ -1,8 +1,8 @@
-using Entitas;
 using UnityEngine;
+using Entitas;
 
 [Game]
-public class RigidbodyUnderControlComponent : IComponent
+public class RigidbodyComponent : IComponent
 {
     public Rigidbody value;
 }

@@ -28,33 +28,6 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
             ""id"": ""876e9367-e4de-49d3-9fcf-16b10fddbd20"",
             ""actions"": [
                 {
-                    ""name"": ""Movement"",
-                    ""type"": ""Value"",
-                    ""id"": ""b400e2fe-0b94-4ef7-956e-d6090c25df5d"",
-                    ""expectedControlType"": ""Axis"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Rotation"",
-                    ""type"": ""Value"",
-                    ""id"": ""cba17f3d-82ad-44f0-861e-edc4a33b5e56"",
-                    ""expectedControlType"": ""Axis"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Interact"",
-                    ""type"": ""Button"",
-                    ""id"": ""2e175c0d-8449-4172-8b3c-227770cce01e"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""Strafe"",
                     ""type"": ""Value"",
                     ""id"": ""440b5a45-e0eb-45c2-a938-fc5795ff25d0"",
@@ -65,83 +38,6 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 }
             ],
             ""bindings"": [
-                {
-                    ""name"": ""1D Axis"",
-                    ""id"": ""f612b085-9c16-4700-9130-033ba1cb45a2"",
-                    ""path"": ""1DAxis"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""fee2fed5-490c-40c8-86e1-a80ecef238ed"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Mouse & Keyboard"",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""832a94eb-9252-484d-a515-dbc9066668f3"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Mouse & Keyboard"",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""00b8664d-ca1a-4054-933c-eb14de16faff"",
-                    ""path"": ""<Keyboard>/r"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Mouse & Keyboard"",
-                    ""action"": ""Interact"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""1D Axis"",
-                    ""id"": ""36868a21-33a7-49ad-92fc-53211e4b93a6"",
-                    ""path"": ""1DAxis"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Rotation"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""Negative"",
-                    ""id"": ""69c0e86d-af04-421d-b744-5b79c6de5409"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Mouse & Keyboard"",
-                    ""action"": ""Rotation"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Positive"",
-                    ""id"": ""4e219d95-cf1a-4067-b2a3-2ae6b5cb246f"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Mouse & Keyboard"",
-                    ""action"": ""Rotation"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
                 {
                     ""name"": ""1D Axis"",
                     ""id"": ""d7d37cbe-e66d-4c7c-b5e5-9e7d285600e1"",
@@ -156,7 +52,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""negative"",
                     ""id"": ""595527ea-ac8b-41db-ad3b-6c65060b878a"",
-                    ""path"": ""<Keyboard>/q"",
+                    ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Mouse & Keyboard"",
@@ -167,7 +63,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""positive"",
                     ""id"": ""efc2d256-5bc9-45d6-b6e8-2dfa4148dcad"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Mouse & Keyboard"",
@@ -227,9 +123,6 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
 }");
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
-        m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
-        m_Player_Rotation = m_Player.FindAction("Rotation", throwIfNotFound: true);
-        m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_Strafe = m_Player.FindAction("Strafe", throwIfNotFound: true);
         // GUI
         m_GUI = asset.FindActionMap("GUI", throwIfNotFound: true);
@@ -293,17 +186,11 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
     // Player
     private readonly InputActionMap m_Player;
     private IPlayerActions m_PlayerActionsCallbackInterface;
-    private readonly InputAction m_Player_Movement;
-    private readonly InputAction m_Player_Rotation;
-    private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_Strafe;
     public struct PlayerActions
     {
         private @InputActions m_Wrapper;
         public PlayerActions(@InputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Movement => m_Wrapper.m_Player_Movement;
-        public InputAction @Rotation => m_Wrapper.m_Player_Rotation;
-        public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @Strafe => m_Wrapper.m_Player_Strafe;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
@@ -314,15 +201,6 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         {
             if (m_Wrapper.m_PlayerActionsCallbackInterface != null)
             {
-                @Movement.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMovement;
-                @Movement.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMovement;
-                @Movement.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMovement;
-                @Rotation.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotation;
-                @Rotation.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotation;
-                @Rotation.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotation;
-                @Interact.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
-                @Interact.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
-                @Interact.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
                 @Strafe.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStrafe;
                 @Strafe.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStrafe;
                 @Strafe.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStrafe;
@@ -330,15 +208,6 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Movement.started += instance.OnMovement;
-                @Movement.performed += instance.OnMovement;
-                @Movement.canceled += instance.OnMovement;
-                @Rotation.started += instance.OnRotation;
-                @Rotation.performed += instance.OnRotation;
-                @Rotation.canceled += instance.OnRotation;
-                @Interact.started += instance.OnInteract;
-                @Interact.performed += instance.OnInteract;
-                @Interact.canceled += instance.OnInteract;
                 @Strafe.started += instance.OnStrafe;
                 @Strafe.performed += instance.OnStrafe;
                 @Strafe.canceled += instance.OnStrafe;
@@ -390,9 +259,6 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
     }
     public interface IPlayerActions
     {
-        void OnMovement(InputAction.CallbackContext context);
-        void OnRotation(InputAction.CallbackContext context);
-        void OnInteract(InputAction.CallbackContext context);
         void OnStrafe(InputAction.CallbackContext context);
     }
     public interface IGUIActions

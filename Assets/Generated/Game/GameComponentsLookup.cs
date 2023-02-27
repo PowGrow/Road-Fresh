@@ -8,159 +8,75 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int Animated = 0;
-    public const int Animator = 1;
-    public const int Collision = 2;
-    public const int Destroy = 3;
-    public const int Engine = 4;
-    public const int ExitCollision = 5;
-    public const int GameSetup = 6;
-    public const int Gear = 7;
-    public const int InitialPoistion = 8;
-    public const int Interactable = 9;
-    public const int InteractObject = 10;
-    public const int InteractTextCanvas = 11;
-    public const int InteractText = 12;
-    public const int LeftArmPosition = 13;
-    public const int LeftLegPosition = 14;
-    public const int Lock = 15;
-    public const int MainCamera = 16;
-    public const int MountPosition = 17;
-    public const int Physic = 18;
-    public const int Player = 19;
-    public const int Position = 20;
-    public const int Resource = 21;
-    public const int RiderCollider = 22;
-    public const int Rider = 23;
-    public const int RiderLeftArmPosition = 24;
-    public const int RiderLeftLegPosition = 25;
-    public const int RiderRightArmPosition = 26;
-    public const int RiderRightLegPosition = 27;
-    public const int RiderRigidbody = 28;
-    public const int RiderSetted = 29;
-    public const int Riding = 30;
-    public const int RightArmPosition = 31;
-    public const int RightLegPosition = 32;
-    public const int RigidbodyUnderControl = 33;
-    public const int Rotation = 34;
-    public const int RotationInput = 35;
-    public const int RotationSpeed = 36;
-    public const int Speed = 37;
-    public const int SteeringWheel = 38;
-    public const int TryingToControlVehicle = 39;
-    public const int UnmountPosition = 40;
-    public const int Vehicle = 41;
-    public const int VehiclePrefabs = 42;
-    public const int VehicleSetup = 43;
-    public const int VehicleToCreate = 44;
-    public const int VehicleViewData = 45;
-    public const int Velocity = 46;
-    public const int VelocityInput = 47;
-    public const int View = 48;
+    public const int AddBackgroundCollision = 0;
+    public const int AddRoadCollision = 1;
+    public const int Animated = 2;
+    public const int Animator = 3;
+    public const int Background = 4;
+    public const int BackgroundSetup = 5;
+    public const int DestroyBackgroundCollision = 6;
+    public const int Destroyed = 7;
+    public const int DestroyRoadCollision = 8;
+    public const int GamePaused = 9;
+    public const int OutOfBorder = 10;
+    public const int Player = 11;
+    public const int PlayerSetup = 12;
+    public const int Position = 13;
+    public const int Resource = 14;
+    public const int Rigidbody = 15;
+    public const int Road = 16;
+    public const int RoadSetup = 17;
+    public const int StrafeInput = 18;
+    public const int StrafeSpeed = 19;
+    public const int View = 20;
 
-    public const int TotalComponents = 49;
+    public const int TotalComponents = 21;
 
     public static readonly string[] componentNames = {
+        "AddBackgroundCollision",
+        "AddRoadCollision",
         "Animated",
         "Animator",
-        "Collision",
-        "Destroy",
-        "Engine",
-        "ExitCollision",
-        "GameSetup",
-        "Gear",
-        "InitialPoistion",
-        "Interactable",
-        "InteractObject",
-        "InteractTextCanvas",
-        "InteractText",
-        "LeftArmPosition",
-        "LeftLegPosition",
-        "Lock",
-        "MainCamera",
-        "MountPosition",
-        "Physic",
+        "Background",
+        "BackgroundSetup",
+        "DestroyBackgroundCollision",
+        "Destroyed",
+        "DestroyRoadCollision",
+        "GamePaused",
+        "OutOfBorder",
         "Player",
+        "PlayerSetup",
         "Position",
         "Resource",
-        "RiderCollider",
-        "Rider",
-        "RiderLeftArmPosition",
-        "RiderLeftLegPosition",
-        "RiderRightArmPosition",
-        "RiderRightLegPosition",
-        "RiderRigidbody",
-        "RiderSetted",
-        "Riding",
-        "RightArmPosition",
-        "RightLegPosition",
-        "RigidbodyUnderControl",
-        "Rotation",
-        "RotationInput",
-        "RotationSpeed",
-        "Speed",
-        "SteeringWheel",
-        "TryingToControlVehicle",
-        "UnmountPosition",
-        "Vehicle",
-        "VehiclePrefabs",
-        "VehicleSetup",
-        "VehicleToCreate",
-        "VehicleViewData",
-        "Velocity",
-        "VelocityInput",
+        "Rigidbody",
+        "Road",
+        "RoadSetup",
+        "StrafeInput",
+        "StrafeSpeed",
         "View"
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(AddBackgroundCollisionComponent),
+        typeof(AddRoadCollisionComponent),
         typeof(AnimatedComponent),
         typeof(AnimatorComponent),
-        typeof(CollisionComponent),
-        typeof(DestroyComponent),
-        typeof(EngineComponent),
-        typeof(ExitCollisionComponent),
-        typeof(GameSetupComponent),
-        typeof(GearComponent),
-        typeof(InitialPoistionComponent),
-        typeof(InteractableComponent),
-        typeof(InteractObjectComponent),
-        typeof(InteractTextCanvasComponent),
-        typeof(InteractTextComponent),
-        typeof(LeftArmPositionComponent),
-        typeof(LeftLegPositionComponent),
-        typeof(LockComponent),
-        typeof(MainCameraComponent),
-        typeof(MountPositionComponent),
-        typeof(PhysicComponent),
+        typeof(BackgroundComponent),
+        typeof(BackgroundSetupComponent),
+        typeof(DestroyBackgroundCollisionComponent),
+        typeof(DestroyedComponent),
+        typeof(DestroyRoadCollisionComponent),
+        typeof(GamePausedComponent),
+        typeof(OutOfBorderComponent),
         typeof(PlayerComponent),
+        typeof(PlayerSetupComponent),
         typeof(PositionComponent),
         typeof(ResourceComponent),
-        typeof(RiderColliderComponent),
-        typeof(RiderComponent),
-        typeof(RiderLeftArmPositionComponent),
-        typeof(RiderLeftLegPositionComponent),
-        typeof(RiderRightArmPositionComponent),
-        typeof(RiderRightLegPositionComponent),
-        typeof(RiderRigidbodyComponent),
-        typeof(RiderSettedComponent),
-        typeof(RidingComponent),
-        typeof(RightArmPositionComponent),
-        typeof(RightLegPositionComponent),
-        typeof(RigidbodyUnderControlComponent),
-        typeof(RotationComponent),
-        typeof(RotationInputComponent),
-        typeof(RotationSpeedComponent),
-        typeof(SpeedComponent),
-        typeof(SteeringWheelComponent),
-        typeof(TryingToControlVehicleComponent),
-        typeof(UnmountPositionComponent),
-        typeof(VehicleComponent),
-        typeof(VehiclePrefabsComponent),
-        typeof(VehicleSetupComponent),
-        typeof(VehicleToCreateComponent),
-        typeof(VehicleViewDataComponent),
-        typeof(VelocityComponent),
-        typeof(VelocityInputComponent),
+        typeof(RigidbodyComponent),
+        typeof(RoadComponent),
+        typeof(RoadSetupComponent),
+        typeof(StrafeInputComponent),
+        typeof(StrafeSpeedComponent),
         typeof(ViewComponent)
     };
 }

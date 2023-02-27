@@ -4,18 +4,20 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     [SerializeField]
-    private GameSetup gameSetup;
+    private PlayerSetup playerSetup;
     [SerializeField]
-    private VehiclePrefabs vehiclePrefabs;
-
+    private RoadSetup roadSetup;
+    [SerializeField]
+    private BackgroundSetup backgroundSetup;
     private Systems _systems;
 
     private void Start()
     {
         var contexts = Contexts.sharedInstance;
         _systems = new GameSystems(contexts);
-        contexts.game.SetGameSetup(gameSetup);
-        contexts.game.SetVehiclePrefabs(vehiclePrefabs);
+        contexts.game.SetPlayerSetup(playerSetup);
+        contexts.game.SetRoadSetup(roadSetup);
+        contexts.game.SetBackgroundSetup(backgroundSetup);
         _systems.Initialize();
     }
 

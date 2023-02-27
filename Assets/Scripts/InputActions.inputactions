@@ -6,33 +6,6 @@
             "id": "876e9367-e4de-49d3-9fcf-16b10fddbd20",
             "actions": [
                 {
-                    "name": "Movement",
-                    "type": "Value",
-                    "id": "b400e2fe-0b94-4ef7-956e-d6090c25df5d",
-                    "expectedControlType": "Axis",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "Rotation",
-                    "type": "Value",
-                    "id": "cba17f3d-82ad-44f0-861e-edc4a33b5e56",
-                    "expectedControlType": "Axis",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "Interact",
-                    "type": "Button",
-                    "id": "2e175c0d-8449-4172-8b3c-227770cce01e",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Strafe",
                     "type": "Value",
                     "id": "440b5a45-e0eb-45c2-a938-fc5795ff25d0",
@@ -43,83 +16,6 @@
                 }
             ],
             "bindings": [
-                {
-                    "name": "1D Axis",
-                    "id": "f612b085-9c16-4700-9130-033ba1cb45a2",
-                    "path": "1DAxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "positive",
-                    "id": "fee2fed5-490c-40c8-86e1-a80ecef238ed",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Mouse & Keyboard",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "negative",
-                    "id": "832a94eb-9252-484d-a515-dbc9066668f3",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Mouse & Keyboard",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "",
-                    "id": "00b8664d-ca1a-4054-933c-eb14de16faff",
-                    "path": "<Keyboard>/r",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Mouse & Keyboard",
-                    "action": "Interact",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "1D Axis",
-                    "id": "36868a21-33a7-49ad-92fc-53211e4b93a6",
-                    "path": "1DAxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Rotation",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "Negative",
-                    "id": "69c0e86d-af04-421d-b744-5b79c6de5409",
-                    "path": "<Keyboard>/a",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Mouse & Keyboard",
-                    "action": "Rotation",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "Positive",
-                    "id": "4e219d95-cf1a-4067-b2a3-2ae6b5cb246f",
-                    "path": "<Keyboard>/d",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Mouse & Keyboard",
-                    "action": "Rotation",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
                 {
                     "name": "1D Axis",
                     "id": "d7d37cbe-e66d-4c7c-b5e5-9e7d285600e1",
@@ -134,7 +30,7 @@
                 {
                     "name": "negative",
                     "id": "595527ea-ac8b-41db-ad3b-6c65060b878a",
-                    "path": "<Keyboard>/q",
+                    "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse & Keyboard",
@@ -145,7 +41,7 @@
                 {
                     "name": "positive",
                     "id": "efc2d256-5bc9-45d6-b6e8-2dfa4148dcad",
-                    "path": "<Keyboard>/e",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse & Keyboard",

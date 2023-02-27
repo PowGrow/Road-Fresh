@@ -11,17 +11,17 @@ public partial class GameEntity {
     public ResourceComponent resource { get { return (ResourceComponent)GetComponent(GameComponentsLookup.Resource); } }
     public bool hasResource { get { return HasComponent(GameComponentsLookup.Resource); } }
 
-    public void AddResource(UnityEngine.GameObject newViewPrefab) {
+    public void AddResource(UnityEngine.GameObject newValue) {
         var index = GameComponentsLookup.Resource;
         var component = (ResourceComponent)CreateComponent(index, typeof(ResourceComponent));
-        component.ViewPrefab = newViewPrefab;
+        component.value = newValue;
         AddComponent(index, component);
     }
 
-    public void ReplaceResource(UnityEngine.GameObject newViewPrefab) {
+    public void ReplaceResource(UnityEngine.GameObject newValue) {
         var index = GameComponentsLookup.Resource;
         var component = (ResourceComponent)CreateComponent(index, typeof(ResourceComponent));
-        component.ViewPrefab = newViewPrefab;
+        component.value = newValue;
         ReplaceComponent(index, component);
     }
 
