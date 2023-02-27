@@ -19,7 +19,7 @@ public class BackgroundMoveSystem : IExecuteSystem
         {
             if(entity.hasView)
             {
-                entity.view.value.transform.Translate(new Vector3(0,0,-_contexts.game.backgroundSetup.value.BackgroundSpeed) * Time.deltaTime);
+                entity.view.value.transform.Translate(new Vector3(0,0,-_contexts.game.backgroundSetup.value.BackgroundSpeed * _contexts.game.gameData.value.GlobalGameSpeed) * Time.deltaTime);
                 entity.ReplacePosition(entity.view.value.transform.position);
             }
         }
