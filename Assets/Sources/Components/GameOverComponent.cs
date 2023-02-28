@@ -1,7 +1,6 @@
-    using Entitas.CodeGeneration.Attributes;
 using Entitas;
 
-[Game,Unique]
+[Game]
 public class GameOverComponent : IComponent
 {
 

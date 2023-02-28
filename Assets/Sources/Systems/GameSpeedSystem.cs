@@ -18,8 +18,6 @@ public class GameSpeedSystem : IInitializeSystem, IExecuteSystem
     public void Initialize()
     {
         _gameData = _contexts.game.gameData.value;
-        //reset data to default;
-        _gameData.ObstaclePassed = 0;
         _gameData.GlobalGameSpeed = 1f;
     }
 

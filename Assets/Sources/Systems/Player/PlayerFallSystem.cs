@@ -29,12 +29,11 @@ public class PlayerFallSystem : ReactiveSystem<GameEntity>
     {
         foreach (var entity in entities)
         {
-            _contexts.game.isGamePaused = true;
             entity.unityRigs.value.RigBuilder.enabled = false;
             entity.unityRigs.value.UnityRigsTransform.gameObject.SetActive(false);
             entity.animator.value.SetTrigger(SCOOTER_CRUSH_TRIGGER);
             entity.unityRigs.value.CharacterAnimator.SetTrigger(CHARACTER_FALLEN_TRIGGER);
-            _contexts.game.isGameOver = true;
+            entity.isGameOver = true;
         }
     }
 }

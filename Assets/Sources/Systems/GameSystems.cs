@@ -5,6 +5,7 @@ public sealed class GameSystems: Feature
     public GameSystems(Contexts contexts)
     {
         //Initialize
+        Add(new GameUIInitializeSystem(contexts));
         Add(new RoadInitializeSystem(contexts));
         Add(new BackgroundInitializeSystem(contexts));
         Add(new PlayerInitializeSystem(contexts));

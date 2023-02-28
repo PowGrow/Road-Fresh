@@ -41,6 +41,11 @@ namespace RoadFresh.View
                 }
                 if (entity.isAnimated)
                     entity.AddAnimator(gameObject.GetComponent<Animator>());
+                if (entity.isUi)
+                {
+                    _contexts.game.SetGameUI(gameObject.GetComponent<GameUI>());
+                    var test = _contexts.game.gameUI.value;
+                }
             }
         }
     }

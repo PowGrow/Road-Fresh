@@ -2,13 +2,18 @@ using Entitas;
 using Entitas.Unity;
 using System.Collections.Generic;
 
-public class ScoreSystem : ReactiveSystem<GameEntity>
+public class ScoreSystem : ReactiveSystem<GameEntity>,IInitializeSystem
 {
     private Contexts _contexts;
 
     public ScoreSystem(Contexts contexts) : base(contexts.game)
     {
         _contexts = contexts;
+    }
+
+    public void Initialize()
+    {
+        _contexts.game.gameData.value.Score = 0;
     }
 
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
@@ -30,6 +35,7 @@ public class ScoreSystem : ReactiveSystem<GameEntity>
             {
                 var gameData = _contexts.game.gameData.value;
                 gameData.Score += gameData.GlobalGameSpeed * gameData.ScorePerObstacle;
+                _contexts.game.gameUI.value.GameOverlay.UpdateScore(gameData.Score);
             }
         }
     }

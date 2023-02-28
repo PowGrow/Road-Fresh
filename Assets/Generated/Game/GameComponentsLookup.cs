@@ -22,22 +22,25 @@ public static class GameComponentsLookup {
     public const int GameData = 11;
     public const int GameOver = 12;
     public const int GamePaused = 13;
-    public const int ObstacleCollision = 14;
-    public const int ObstaclePassedCollision = 15;
-    public const int OutOfBorder = 16;
-    public const int Player = 17;
-    public const int PlayerSetup = 18;
-    public const int Position = 19;
-    public const int Resource = 20;
-    public const int Rigidbody = 21;
-    public const int Road = 22;
-    public const int RoadSetup = 23;
-    public const int StrafeInput = 24;
-    public const int StrafeSpeed = 25;
-    public const int UnityRigs = 26;
-    public const int View = 27;
+    public const int GameUI = 14;
+    public const int ObstacleCollision = 15;
+    public const int ObstaclePassedCollision = 16;
+    public const int OutOfBorder = 17;
+    public const int Player = 18;
+    public const int PlayerSetup = 19;
+    public const int Position = 20;
+    public const int Resource = 21;
+    public const int Rigidbody = 22;
+    public const int Road = 23;
+    public const int RoadSetup = 24;
+    public const int StrafeInput = 25;
+    public const int StrafeSpeed = 26;
+    public const int Ui = 27;
+    public const int UISetup = 28;
+    public const int UnityRigs = 29;
+    public const int View = 30;
 
-    public const int TotalComponents = 28;
+    public const int TotalComponents = 31;
 
     public static readonly string[] componentNames = {
         "AddBackgroundCollision",
@@ -54,6 +57,7 @@ public static class GameComponentsLookup {
         "GameData",
         "GameOver",
         "GamePaused",
+        "GameUI",
         "ObstacleCollision",
         "ObstaclePassedCollision",
         "OutOfBorder",
@@ -66,6 +70,8 @@ public static class GameComponentsLookup {
         "RoadSetup",
         "StrafeInput",
         "StrafeSpeed",
+        "Ui",
+        "UISetup",
         "UnityRigs",
         "View"
     };
@@ -85,6 +91,7 @@ public static class GameComponentsLookup {
         typeof(GameDataComponent),
         typeof(GameOverComponent),
         typeof(GamePausedComponent),
+        typeof(GameUIComponent),
         typeof(ObstacleCollisionComponent),
         typeof(ObstaclePassedCollisionComponent),
         typeof(OutOfBorderComponent),
@@ -97,6 +104,8 @@ public static class GameComponentsLookup {
         typeof(RoadSetupComponent),
         typeof(StrafeInputComponent),
         typeof(StrafeSpeedComponent),
+        typeof(UiComponent),
+        typeof(UISetupComponent),
         typeof(UnityRigsComponent),
         typeof(ViewComponent)
     };

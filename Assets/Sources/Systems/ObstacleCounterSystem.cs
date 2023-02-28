@@ -1,15 +1,19 @@
 using System.Collections.Generic;
-using UnityEngine;
 using Entitas;
 using Entitas.Unity;
 
-public class ObstacleCounterSystem : ReactiveSystem<GameEntity>
+public class ObstacleCounterSystem : ReactiveSystem<GameEntity>, IInitializeSystem
 {
     private Contexts _contexts;
 
     public ObstacleCounterSystem(Contexts contexts) : base(contexts.game)
     {
         _contexts = contexts;
+    }
+
+    public void Initialize()
+    {
+        _contexts.game.gameData.value.ObstaclePassed = 0;
     }
 
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
@@ -30,7 +34,7 @@ public class ObstacleCounterSystem : ReactiveSystem<GameEntity>
             if(collisionSource.isPlayer)
             {
                 _contexts.game.gameData.value.ObstaclePassed += 1;
-                Debug.Log("Obstacle passed: " + _contexts.game.gameData.value.ObstaclePassed);
+                _contexts.game.gameUI.value.GameOverlay.UpdateObstaclesCount(_contexts.game.gameData.value.ObstaclePassed);
             }
         }
         foreach (var entity in entities)

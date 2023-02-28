@@ -7,6 +7,8 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private PlayerSetup playerSetup;
     [SerializeField]
+    private UISetup uiSetup;
+    [SerializeField]
     private RoadSetup roadSetup;
     [SerializeField]
     private BackgroundSetup backgroundSetup;
@@ -23,6 +25,7 @@ public class GameController : MonoBehaviour
         _contexts.game.SetRoadSetup(roadSetup);
         _contexts.game.SetBackgroundSetup(backgroundSetup);
         _contexts.game.SetGameData(gameData);
+        _contexts.game.SetUISetup(uiSetup);
         _systems.Initialize();
     }
 
