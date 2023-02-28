@@ -35,6 +35,15 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Beep"",
+                    ""type"": ""Button"",
+                    ""id"": ""65b9aa39-a8c0-4d5f-afe7-eeeaa1b5f82b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -70,6 +79,17 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""action"": ""Strafe"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7c19a8b7-1d35-4f20-8532-279dfd3d6f7d"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""Beep"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -124,6 +144,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Strafe = m_Player.FindAction("Strafe", throwIfNotFound: true);
+        m_Player_Beep = m_Player.FindAction("Beep", throwIfNotFound: true);
         // GUI
         m_GUI = asset.FindActionMap("GUI", throwIfNotFound: true);
         m_GUI_Escape = m_GUI.FindAction("Escape", throwIfNotFound: true);
@@ -187,11 +208,13 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Player;
     private IPlayerActions m_PlayerActionsCallbackInterface;
     private readonly InputAction m_Player_Strafe;
+    private readonly InputAction m_Player_Beep;
     public struct PlayerActions
     {
         private @InputActions m_Wrapper;
         public PlayerActions(@InputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Strafe => m_Wrapper.m_Player_Strafe;
+        public InputAction @Beep => m_Wrapper.m_Player_Beep;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -204,6 +227,9 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 @Strafe.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStrafe;
                 @Strafe.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStrafe;
                 @Strafe.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStrafe;
+                @Beep.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBeep;
+                @Beep.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBeep;
+                @Beep.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBeep;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -211,6 +237,9 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 @Strafe.started += instance.OnStrafe;
                 @Strafe.performed += instance.OnStrafe;
                 @Strafe.canceled += instance.OnStrafe;
+                @Beep.started += instance.OnBeep;
+                @Beep.performed += instance.OnBeep;
+                @Beep.canceled += instance.OnBeep;
             }
         }
     }
@@ -260,6 +289,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
     public interface IPlayerActions
     {
         void OnStrafe(InputAction.CallbackContext context);
+        void OnBeep(InputAction.CallbackContext context);
     }
     public interface IGUIActions
     {

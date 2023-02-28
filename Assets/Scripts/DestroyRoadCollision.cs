@@ -1,21 +1,18 @@
 using Entitas.Unity;
 using UnityEngine;
 
-public class DestroyRoadCollision : MonoBehaviour
+public class DestroyRoadCollision : CollisionBase
 {
     private void OnTriggerEnter(Collider other)
     {
-        var entity = GetLinkedEntity(other.gameObject);
-        if (entity != null && entity.isRoad)
+        if (HasLinkedEntity(other.gameObject))
         {
-            var collisionEntity = Contexts.sharedInstance.game.CreateEntity();
-            collisionEntity.AddDestroyRoadCollision(other.gameObject, gameObject);
+            var entity = (GameEntity)other.gameObject.GetEntityLink().entity;
+            if (entity.isRoad)
+            {
+                var collisionEntity = Contexts.sharedInstance.game.CreateEntity();
+                collisionEntity.AddDestroyRoadCollision(other.gameObject, gameObject);
+            }
         }
-    }
-
-    private GameEntity GetLinkedEntity(GameObject gameObject)
-    {
-        var entityLink = gameObject.GetEntityLink();
-        return (GameEntity)entityLink.entity;
     }
 }

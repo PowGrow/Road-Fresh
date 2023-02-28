@@ -12,6 +12,7 @@ public sealed class GameSystems: Feature
         Add(new ViewInitializeSystem(contexts));
         Add(new GameSpeedSystem(contexts));
         //Execute
+        Add(new PlayerBeepSystem(contexts));
         Add(new RoadMoveSystem(contexts));
         Add(new BackgroundMoveSystem(contexts));
         Add(new PlayerMoveSystem(contexts));

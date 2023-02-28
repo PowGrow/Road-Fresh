@@ -17,6 +17,8 @@ public class InputHandler : MonoBehaviour
     {
         _inputActions.Player.Strafe.performed += callbackContext => SetStrafe(callbackContext.ReadValue<float>());
         _inputActions.Player.Strafe.canceled += callbackContext => StopStrafe();
+        _inputActions.Player.Beep.performed += callbackContext => SetBeep();
+        _inputActions.Player.Beep.canceled += callbackContext => StopBeep();
         _inputActions.Enable();
     }
 
@@ -33,6 +35,16 @@ public class InputHandler : MonoBehaviour
     private void StopStrafe()
     {
         _contexts.game.ReplaceStrafeInput(0);
+    }
+
+    private void SetBeep()
+    {
+        _contexts.game.ReplaceBeep(true);
+    }
+
+    private void StopBeep()
+    {
+        _contexts.game.ReplaceBeep(false);
     }
 
 }

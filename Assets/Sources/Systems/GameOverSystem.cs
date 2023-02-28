@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
-public class GameOverSystem : ReactiveSystem<GameEntity>
+public sealed class GameOverSystem : ReactiveSystem<GameEntity>
 {
     private Contexts _contexts;
 
@@ -56,7 +56,7 @@ public class GameOverSystem : ReactiveSystem<GameEntity>
             {
                 statistic.Insert(index, statisticLine);
                 if(statistic.Count > STATISTIC_LINES)
-                    statistic.RemoveAt(STATISTIC_LINES + 1);
+                    statistic.RemoveAt(STATISTIC_LINES);
                 Statistic.SaveStatistic(statistic);
                 return true;
             }

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8351486542255921265}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BL_Hip.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8292802394489246194}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BR_Ankle.020
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1741895127063426630}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FR_Hip.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7824739000042850179}
   - component: {fileID: 3862709355156538624}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rig 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2466936008983288506}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BR_Sole.021_end_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,7 +182,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2923846406799766018}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BL_Huckle.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,7 +214,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8724590188617509526}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FL_Hip.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -246,7 +246,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5035107386229066620}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hip.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -280,7 +280,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6565186054247188139}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BR_Sole.021_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -312,7 +312,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2993152570667472959}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FR_Huckle.016
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -344,7 +344,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8469701100351895695}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FR_Sole.018_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -376,7 +376,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8410346557853753218}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Neck.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -409,7 +409,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2260448503975105845}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FL_sole.015
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -441,7 +441,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1823176168516573380}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BR_Hip.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -473,7 +473,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3039648252290662829}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FR_Sole.018_end_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -504,7 +504,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8474772590069336957}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BL_Sole.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -536,7 +536,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3349529001477349304}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Armature.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -568,7 +568,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4478052752133934713}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FL_Ankle.014
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -600,7 +600,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6797540804926563192}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spine.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -634,7 +634,7 @@ GameObject:
   - component: {fileID: 358302239647822695}
   - component: {fileID: 7340994302816575526}
   - component: {fileID: 6212746967171443096}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Passed Collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -691,7 +691,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3002642188987267173}
   - component: {fileID: 856680244646131555}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -806,7 +806,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 232688004713284657}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hip.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -838,7 +838,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8429708987662720442}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hip.022
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -870,7 +870,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5633971193421515784}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Head.007_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -901,7 +901,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7401161156534714306}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hip.023
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -933,7 +933,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1290744930943632465}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FR_Hip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -965,7 +965,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6574500522111605126}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FL_sole.015_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -997,7 +997,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3198028038379241121}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spine.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1032,7 +1032,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8799929942690478843}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BR_Sole.021
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1064,7 +1064,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8092621900562951816}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FL_sole.015_end_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1095,7 +1095,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3918794668770997344}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BL_Sole.012_end_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1126,7 +1126,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3651183217081353778}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1158,7 +1158,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6996895980721327622}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BR_Huckle.019
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1190,7 +1190,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8958125545174841146}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BL_Sole.012_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1222,7 +1222,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3412000382854626354}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FR_Ankle.017
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1258,8 +1258,8 @@ GameObject:
   - component: {fileID: 533768063960189092}
   - component: {fileID: 4880853850987691302}
   - component: {fileID: 8179523265928472878}
-  - component: {fileID: 7538400503668431273}
-  m_Layer: 0
+  - component: {fileID: 3721186308305415182}
+  m_Layer: 6
   m_Name: Deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1387,7 +1387,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &7538400503668431273
+--- !u!114 &3721186308305415182
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1396,7 +1396,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7210135377996395800}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93774e06d0158a3498ea8f96556f1be4, type: 3}
+  m_Script: {fileID: 11500000, guid: d62fd9090761efa428a41d6fc8e7d81d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7851212865516093847
@@ -1408,7 +1408,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6745418007144217694}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BL_Ankle.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1441,7 +1441,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2508277384851273411}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FL_Huckle.013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1473,7 +1473,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6333701329913363330}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FR_Sole.018
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1505,7 +1505,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 555065000284202195}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Head.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1537,7 +1537,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 600546974932027843}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FL_Hip.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}

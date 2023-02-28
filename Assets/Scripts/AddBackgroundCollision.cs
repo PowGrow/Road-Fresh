@@ -1,21 +1,19 @@
+using Entitas;
 using Entitas.Unity;
 using UnityEngine;
 
-public class AddBackgroundCollision : MonoBehaviour
+public class AddBackgroundCollision : CollisionBase
 {
     private void OnTriggerEnter(Collider other)
     {
-        var entity = GetLinkedEntity(other.gameObject);
-        if (entity != null && entity.isBackground)
+        if (HasLinkedEntity(other.gameObject))
         {
-            var collisionEntity = Contexts.sharedInstance.game.CreateEntity();
-            collisionEntity.AddAddBackgroundCollision(other.gameObject, gameObject);
+            var entity = (GameEntity)other.gameObject.GetEntityLink().entity;
+            if (entity.isBackground)
+            {
+                var collisionEntity = Contexts.sharedInstance.game.CreateEntity();
+                collisionEntity.AddAddBackgroundCollision(other.gameObject, gameObject);
+            }
         }
-    }
-
-    private GameEntity GetLinkedEntity(GameObject gameObject)
-    {
-        var entityLink = gameObject.GetEntityLink();
-        return (GameEntity)entityLink.entity;
     }
 }

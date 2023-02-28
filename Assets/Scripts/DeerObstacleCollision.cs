@@ -1,7 +1,9 @@
 using Entitas.Unity;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class ObstacleCollision : CollisionBase
+public class DeerObstacleCollision : CollisionBase
 {
     private void OnTriggerEnter(Collider other)
     {
@@ -9,7 +11,11 @@ public class ObstacleCollision : CollisionBase
         {
             var entity = (GameEntity)other.gameObject.GetEntityLink().entity;
             if (entity.isPlayer)
+            {
                 entity.isFell = true;
+                var deerAnimator = GetComponent<Animator>();
+                deerAnimator.SetTrigger("Fall");
+            }
         }
     }
 }

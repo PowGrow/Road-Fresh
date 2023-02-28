@@ -38,6 +38,11 @@ namespace RoadFresh.View
                 {
                     entity.AddRigidbody(gameObject.GetComponent<Rigidbody>());
                     entity.AddUnityRigs(gameObject.GetComponent<UnityRigs>());
+                    var beepAudioSource = gameObject.AddComponent<AudioSource>();
+                    beepAudioSource.Pause();
+                    beepAudioSource.loop = true;
+                    beepAudioSource.clip = _contexts.game.playerSetup.value.beepSound;
+                    entity.AddBeepAudioSource(beepAudioSource);
                 }
                 if (entity.isAnimated)
                     entity.AddAnimator(gameObject.GetComponent<Animator>());

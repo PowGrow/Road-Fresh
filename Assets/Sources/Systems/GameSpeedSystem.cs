@@ -1,7 +1,7 @@
 using Entitas;
 using UnityEngine;
 
-public class GameSpeedSystem : IInitializeSystem, IExecuteSystem
+public sealed class GameSpeedSystem : IInitializeSystem, IExecuteSystem
 {
 
     private Contexts _contexts;
