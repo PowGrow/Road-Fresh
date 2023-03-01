@@ -19,6 +19,7 @@ public sealed class PlayerInitializeSystem : IInitializeSystem
         playerEntity.AddStrafeSpeed(playerSetup.StrafeSpeed);
         playerEntity.AddStrafeInput(0);
         playerEntity.AddPosition(playerSetup.InitialPosition);
+        playerEntity.AddHeat(1);
         playerEntity.AddResource(playerSetup.Prefab);
     }
 }

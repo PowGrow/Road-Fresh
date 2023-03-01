@@ -23,12 +23,15 @@ public sealed class GameSpeedSystem : IInitializeSystem, IExecuteSystem
 
     public void Execute()
     {
-        _gameTime += Time.deltaTime;
-        if(_gameTime >= _gameData.DeltaInterval)
+        if (!_contexts.game.isGamePaused)
         {
-            _gameData.GlobalGameSpeed += _gameData.DeltaSpeed;
-            Debug.Log("Current speed: " + _gameData.GlobalGameSpeed);
-            _gameTime = 0f;
+            _gameTime += Time.deltaTime;
+            if (_gameTime >= _gameData.DeltaInterval)
+            {
+                _gameData.GlobalGameSpeed += _gameData.DeltaSpeed;
+                Debug.Log("Current speed: " + _gameData.GlobalGameSpeed);
+                _gameTime = 0f;
+            }
         }
     }
 }

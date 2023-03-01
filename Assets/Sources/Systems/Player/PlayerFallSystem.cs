@@ -31,6 +31,9 @@ public class PlayerFallSystem : ReactiveSystem<GameEntity>
         {
             entity.unityRigs.value.RigBuilder.enabled = false;
             entity.unityRigs.value.UnityRigsTransform.gameObject.SetActive(false);
+            entity.engineAudioSource.value.clip = _contexts.game.playerSetup.value.crashSound;
+            entity.engineAudioSource.value.loop = false;
+            entity.engineAudioSource.value.Play();
             entity.animator.value.SetTrigger(SCOOTER_CRUSH_TRIGGER);
             entity.unityRigs.value.CharacterAnimator.SetTrigger(CHARACTER_FALLEN_TRIGGER);
             entity.isGameOver = true;

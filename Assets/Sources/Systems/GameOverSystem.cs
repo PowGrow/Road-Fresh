@@ -30,6 +30,7 @@ public sealed class GameOverSystem : ReactiveSystem<GameEntity>
         foreach (var entity in entities)
         {
             _contexts.game.gameUI.value.GameOverOverlay.EnableGameOverUI();
+            _contexts.game.gameUI.value.GameOverlay.HideGameControlls();
             _contexts.game.isGamePaused = true;
             if (UpdateStatisticData())
                 _contexts.game.gameUI.value.GameOverOverlay.EnableRecordLable();

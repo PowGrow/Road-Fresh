@@ -30,11 +30,14 @@ public class ObstacleCounterSystem : ReactiveSystem<GameEntity>, IInitializeSyst
     {
         foreach (var entity in entities)
         {
-            var collisionSource = (GameEntity)entity.obstaclePassedCollision.collisionObject.GetEntityLink().entity;
-            if(collisionSource.isPlayer)
+            if (!_contexts.game.isGamePaused)
             {
-                _contexts.game.gameData.value.ObstaclePassed += 1;
-                _contexts.game.gameUI.value.GameOverlay.UpdateObstaclesCount(_contexts.game.gameData.value.ObstaclePassed);
+                var collisionSource = (GameEntity)entity.obstaclePassedCollision.collisionObject.GetEntityLink().entity;
+                if (collisionSource.isPlayer)
+                {
+                    _contexts.game.gameData.value.ObstaclePassed += 1;
+                    _contexts.game.gameUI.value.GameOverlay.UpdateObstaclesCount(_contexts.game.gameData.value.ObstaclePassed);
+                }
             }
         }
         foreach (var entity in entities)

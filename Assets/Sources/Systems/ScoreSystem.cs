@@ -30,12 +30,15 @@ public class ScoreSystem : ReactiveSystem<GameEntity>,IInitializeSystem
     {
         foreach (var entity in entities)
         {
-            var collisionSource = (GameEntity)entity.obstaclePassedCollision.collisionObject.GetEntityLink().entity;
-            if (collisionSource.isPlayer)
+            if (!_contexts.game.isGamePaused)
             {
-                var gameData = _contexts.game.gameData.value;
-                gameData.Score += gameData.GlobalGameSpeed * gameData.ScorePerObstacle;
-                _contexts.game.gameUI.value.GameOverlay.UpdateScore(gameData.Score);
+                var collisionSource = (GameEntity)entity.obstaclePassedCollision.collisionObject.GetEntityLink().entity;
+                if (collisionSource.isPlayer)
+                {
+                    var gameData = _contexts.game.gameData.value;
+                    gameData.Score += gameData.GlobalGameSpeed * gameData.ScorePerObstacle;
+                    _contexts.game.gameUI.value.GameOverlay.UpdateScore(gameData.Score);
+                }
             }
         }
     }

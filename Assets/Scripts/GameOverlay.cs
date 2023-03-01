@@ -1,6 +1,9 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.OnScreen;
+using UnityEngine.UI;
 
 public class GameOverlay : MonoBehaviour
 {
@@ -8,7 +11,20 @@ public class GameOverlay : MonoBehaviour
     private TextMeshProUGUI _scoreCounter;
     [SerializeField]
     private TextMeshProUGUI _obstaclesCounter;
+    [SerializeField]
+    private Image heatImage;
+    [SerializeField]
+    private GameObject heatBarObject;
+    [SerializeField]
+    private GameObject joystick;
+    [SerializeField]
+    private GameObject beepButton;
 
+    private void Awake()
+    {
+        if (Application.platform != RuntimePlatform.Android)
+            HideMobileControlls();
+    }
 
     public void UpdateScore(float value)
     {
@@ -19,4 +35,32 @@ public class GameOverlay : MonoBehaviour
     {
         _obstaclesCounter.text = Convert.ToString((int)value);
     }
+
+    public void UpdateHeat(float value)
+    {
+        heatImage.fillAmount = value;
+    }
+
+    public void HideGameControlls()
+    {
+        heatBarObject.SetActive(false);
+        HideMobileControlls();
+    }
+
+    public void HideMobileControlls()
+    {
+        joystick.SetActive(false);
+        beepButton.SetActive(false);
+    }
+
+    public void OnBeepButtonPress()
+    {
+        Contexts.sharedInstance.game.ReplaceBeep(true);
+    }
+
+    public void OnBeepButtonRelease()
+    {
+        Contexts.sharedInstance.game.ReplaceBeep(false);
+    }
+
 }

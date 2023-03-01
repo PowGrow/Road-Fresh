@@ -18,12 +18,15 @@ public class PlayerMoveSystem : IExecuteSystem
     {
         foreach (var entity in _group)
         {
-            var deltaStrafe = entity.rigidbody.value.transform.right * _contexts.game.strafeInput.value;
-            var deltaPosition = deltaStrafe * entity.strafeSpeed.value * Time.fixedDeltaTime;
+            if (!_contexts.game.isGamePaused)
+            {
+                var deltaStrafe = entity.rigidbody.value.transform.right * _contexts.game.strafeInput.value;
+                var deltaPosition = deltaStrafe * entity.strafeSpeed.value * Time.deltaTime;
 
-            entity.rigidbody.value.MovePosition(entity.rigidbody.value.position + deltaPosition);
-            entity.animator.value.SetFloat("StrafeInput", _contexts.game.strafeInput.value);
-            entity.ReplacePosition(entity.rigidbody.value.position);
+                entity.rigidbody.value.MovePosition(entity.rigidbody.value.position + deltaPosition);
+                entity.animator.value.SetFloat("StrafeInput", _contexts.game.strafeInput.value);
+                entity.ReplacePosition(entity.rigidbody.value.position);
+            }
         }
     }
 }

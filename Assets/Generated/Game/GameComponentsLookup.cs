@@ -19,30 +19,35 @@ public static class GameComponentsLookup {
     public const int CharacterAnimator = 8;
     public const int DestroyBackgroundCollision = 9;
     public const int Destroyed = 10;
-    public const int DestroyRoadCollision = 11;
-    public const int Fell = 12;
-    public const int GameData = 13;
-    public const int GameOver = 14;
-    public const int GamePaused = 15;
-    public const int GameUI = 16;
-    public const int ObstacleCollision = 17;
-    public const int ObstaclePassedCollision = 18;
-    public const int OutOfBorder = 19;
-    public const int Player = 20;
-    public const int PlayerSetup = 21;
-    public const int Position = 22;
-    public const int Resource = 23;
-    public const int Rigidbody = 24;
-    public const int Road = 25;
-    public const int RoadSetup = 26;
-    public const int StrafeInput = 27;
-    public const int StrafeSpeed = 28;
-    public const int Ui = 29;
-    public const int UISetup = 30;
-    public const int UnityRigs = 31;
-    public const int View = 32;
+    public const int DestroyOnLoad = 11;
+    public const int DestroyRoadCollision = 12;
+    public const int EngineAudioSource = 13;
+    public const int Fell = 14;
+    public const int GameData = 15;
+    public const int GameOver = 16;
+    public const int GamePaused = 17;
+    public const int GameUI = 18;
+    public const int Heat = 19;
+    public const int ObstacleCollision = 20;
+    public const int ObstaclePassedCollision = 21;
+    public const int OutOfBorder = 22;
+    public const int Player = 23;
+    public const int PlayerSetup = 24;
+    public const int Position = 25;
+    public const int Resource = 26;
+    public const int Rigidbody = 27;
+    public const int Road = 28;
+    public const int RoadSetup = 29;
+    public const int SceneReloading = 30;
+    public const int SlurpAudioSource = 31;
+    public const int StrafeInput = 32;
+    public const int StrafeSpeed = 33;
+    public const int Ui = 34;
+    public const int UISetup = 35;
+    public const int UnityRigs = 36;
+    public const int View = 37;
 
-    public const int TotalComponents = 33;
+    public const int TotalComponents = 38;
 
     public static readonly string[] componentNames = {
         "AddBackgroundCollision",
@@ -56,12 +61,15 @@ public static class GameComponentsLookup {
         "CharacterAnimator",
         "DestroyBackgroundCollision",
         "Destroyed",
+        "DestroyOnLoad",
         "DestroyRoadCollision",
+        "EngineAudioSource",
         "Fell",
         "GameData",
         "GameOver",
         "GamePaused",
         "GameUI",
+        "Heat",
         "ObstacleCollision",
         "ObstaclePassedCollision",
         "OutOfBorder",
@@ -72,6 +80,8 @@ public static class GameComponentsLookup {
         "Rigidbody",
         "Road",
         "RoadSetup",
+        "SceneReloading",
+        "SlurpAudioSource",
         "StrafeInput",
         "StrafeSpeed",
         "Ui",
@@ -92,12 +102,15 @@ public static class GameComponentsLookup {
         typeof(CharacterAnimatorComponent),
         typeof(DestroyBackgroundCollisionComponent),
         typeof(DestroyedComponent),
+        typeof(DestroyOnLoadComponent),
         typeof(DestroyRoadCollisionComponent),
+        typeof(EngineAudioSourceComponent),
         typeof(FellComponent),
         typeof(GameDataComponent),
         typeof(GameOverComponent),
         typeof(GamePausedComponent),
         typeof(GameUIComponent),
+        typeof(HeatComponent),
         typeof(ObstacleCollisionComponent),
         typeof(ObstaclePassedCollisionComponent),
         typeof(OutOfBorderComponent),
@@ -108,6 +121,8 @@ public static class GameComponentsLookup {
         typeof(RigidbodyComponent),
         typeof(RoadComponent),
         typeof(RoadSetupComponent),
+        typeof(SceneReloadingComponent),
+        typeof(SlurpAudioSourceComponent),
         typeof(StrafeInputComponent),
         typeof(StrafeSpeedComponent),
         typeof(UiComponent),

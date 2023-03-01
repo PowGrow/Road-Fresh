@@ -24,22 +24,25 @@ public sealed class PlayerBeepSystem : IInitializeSystem,IExecuteSystem
     {
         foreach (var entity in _group)
         {
-            if(_contexts.game.beep.value)
+            if (!_contexts.game.isGamePaused)
             {
-                if(!entity.beepAudioSource.value.isPlaying)
-                    entity.beepAudioSource.value.Play();
-                Ray frontRay = new Ray(entity.rigidbody.value.transform.position, Vector3.forward);
-                if(Physics.SphereCast(frontRay,3,out RaycastHit raycastHit,3,1 << 8))
+                if (_contexts.game.beep.value)
                 {
-                    var deerObject = raycastHit.collider.gameObject;
-                    var deerAnimator = deerObject.GetComponent<Animator>();
-                    deerAnimator.SetTrigger("Run");
+                    if (!entity.beepAudioSource.value.isPlaying)
+                        entity.beepAudioSource.value.Play();
+                    Ray frontRay = new Ray(entity.rigidbody.value.transform.position, Vector3.forward);
+                    if (Physics.SphereCast(frontRay, 3, out RaycastHit raycastHit, 3, 1 << 8))
+                    {
+                        var deerObject = raycastHit.collider.gameObject;
+                        var deerAnimator = deerObject.GetComponent<Animator>();
+                        deerAnimator.SetTrigger("Run");
+                    }
                 }
-            }
-            else
-            {
-                if (entity.beepAudioSource.value.isPlaying)
-                    entity.beepAudioSource.value.Stop();
+                else
+                {
+                    if (entity.beepAudioSource.value.isPlaying)
+                        entity.beepAudioSource.value.Stop();
+                }
             }
         }
     }

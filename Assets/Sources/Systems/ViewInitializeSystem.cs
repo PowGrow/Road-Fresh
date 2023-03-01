@@ -3,6 +3,7 @@ using Entitas.Unity;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
+using static UnityEngine.EventSystems.EventTrigger;
 
 namespace RoadFresh.View
 {
@@ -32,26 +33,42 @@ namespace RoadFresh.View
                 var gameObject = Object.Instantiate(entity.resource.value);
                 entity.AddView(gameObject);
                 gameObject.Link(entity);
-                if(entity.hasPosition)
+                if (entity.hasPosition)
+                {
                     gameObject.transform.position = entity.position.value;
+                }
                 if (entity.isPlayer)
                 {
                     entity.AddRigidbody(gameObject.GetComponent<Rigidbody>());
                     entity.AddUnityRigs(gameObject.GetComponent<UnityRigs>());
-                    var beepAudioSource = gameObject.AddComponent<AudioSource>();
-                    beepAudioSource.Pause();
-                    beepAudioSource.loop = true;
-                    beepAudioSource.clip = _contexts.game.playerSetup.value.beepSound;
-                    entity.AddBeepAudioSource(beepAudioSource);
+                    entity.AddBeepAudioSource(CreateAudioSource(gameObject, _contexts.game.playerSetup.value.beepSound,false));
+                    entity.AddSlurpAudioSource(CreateAudioSource(gameObject, _contexts.game.playerSetup.value.teaSlurpSound, false));
+                    entity.AddEngineAudioSource(CreateAudioSource(gameObject, _contexts.game.playerSetup.value.engineSound, true));
+                    entity.engineAudioSource.value.volume = 0.5f;
+                    entity.engineAudioSource.value.Play();
                 }
                 if (entity.isAnimated)
+                {
                     entity.AddAnimator(gameObject.GetComponent<Animator>());
+                }
                 if (entity.isUi)
                 {
                     _contexts.game.SetGameUI(gameObject.GetComponent<GameUI>());
-                    var test = _contexts.game.gameUI.value;
+                }
+                if(entity.isPlayer || entity.isBackground || entity.isRoad)
+                {
+                    entity.isDestroyOnLoad = true;
                 }
             }
+        }
+
+        private AudioSource CreateAudioSource(GameObject gameObject, AudioClip clip, bool loop)
+        {
+            var audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource.Pause();
+            audioSource.loop = loop;
+            audioSource.clip = clip;
+            return audioSource;
         }
     }
 }

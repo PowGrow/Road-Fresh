@@ -1,5 +1,4 @@
 using Entitas;
-using UnityEditor.Rendering.LookDev;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
@@ -14,8 +13,27 @@ public class GameController : MonoBehaviour
     private BackgroundSetup backgroundSetup;
     [SerializeField]
     private GameData gameData;
-    private Systems _systems;
+    [SerializeField]
+    private int targetFrameRateWindows;
+    [SerializeField]
+    private int targetFrameRateAndroid;
+    private static Systems _systems;
     private Contexts _contexts;
+    
+
+    public static Systems Systems
+    {
+        get { return _systems; }
+    }
+
+    private void Awake()
+    {
+        if (Application.platform == RuntimePlatform.Android)
+            Application.targetFrameRate = targetFrameRateAndroid;
+        else
+            Application.targetFrameRate = targetFrameRateWindows;
+
+    }
 
     private void Start()
     {
@@ -31,9 +49,6 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
-        if (!_contexts.game.isGamePaused)
-        {
-            _systems.Execute();
-        }
+        _systems.Execute();
     }
 }

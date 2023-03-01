@@ -1,6 +1,6 @@
-using Entitas.Unity;
 using UnityEngine;
-using Entitas;
+using UnityEngine.InputSystem;
+using Gyroscope = UnityEngine.InputSystem.Gyroscope;
 
 public class InputHandler : MonoBehaviour
 {
