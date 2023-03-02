@@ -430,7 +430,9 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: 
+    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tFound
+      duplicate transform 'Finger_01 1' for human bone 'Right Little Proximal' and
+      'Right Middle Proximal'\n"
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
@@ -461,7 +463,7 @@ ModelImporter:
     nodeNameCollisionStrategy: 0
     fileIdsGeneration: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
