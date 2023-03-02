@@ -30,18 +30,19 @@ namespace RoadFresh.View.Systems
                 var playerObject = entity.view.value;
                 entity.AddRigidbody(playerObject.GetComponent<Rigidbody>());
                 entity.AddUnityRigs(playerObject.GetComponent<UnityRigs>());
-                entity.AddBeepAudioSource(CreateAudioSource(playerObject, _contexts.game.playerSetup.value.beepSound, false));
-                entity.AddSlurpAudioSource(CreateAudioSource(playerObject, _contexts.game.playerSetup.value.teaSlurpSound, false));
-                entity.AddEngineAudioSource(CreateAudioSource(playerObject, _contexts.game.playerSetup.value.engineSound, true));
-                entity.engineAudioSource.value.volume = 0.5f;
+                entity.AddBeepAudioSource(CreateAudioSource(playerObject, _contexts.game.playerSetup.value.beepSound, false,false, 0.7f));
+                entity.AddSlurpAudioSource(CreateAudioSource(playerObject, _contexts.game.playerSetup.value.teaSlurpSound, false, false, 0.7f));
+                entity.AddEngineAudioSource(CreateAudioSource(playerObject, _contexts.game.playerSetup.value.engineSound, true, true, 0.1f));
                 entity.engineAudioSource.value.Play();
             }
         }
 
-        private AudioSource CreateAudioSource(GameObject gameObject, AudioClip clip, bool loop)
+        private AudioSource CreateAudioSource(GameObject gameObject, AudioClip clip, bool loop,bool isPlaying, float volume = 1f)
         {
             var audioSource = gameObject.AddComponent<AudioSource>();
-            audioSource.Pause();
+            if (isPlaying)
+                audioSource.Play();
+            audioSource.volume = volume;
             audioSource.loop = loop;
             audioSource.clip = clip;
             return audioSource;
