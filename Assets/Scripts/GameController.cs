@@ -1,5 +1,7 @@
 using Entitas;
+using Entitas.Unity;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -24,6 +26,25 @@ public class GameController : MonoBehaviour
     public static Systems Systems
     {
         get { return _systems; }
+    }
+
+    public static void LoadScene(string sceneName,Contexts contexts)
+    {
+        var allEntities = contexts.game.GetEntities();
+        _systems.DeactivateReactiveSystems();
+        _systems.ClearReactiveSystems();
+        foreach (GameEntity entity in allEntities)
+        {
+            if (entity.hasView)
+            {
+                entity.view.value.Unlink();
+                entity.Destroy();
+                continue;
+            }
+            entity.Destroy();
+
+        }
+        SceneManager.LoadScene(sceneName);
     }
 
     private void Awake()

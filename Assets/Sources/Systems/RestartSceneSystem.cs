@@ -26,20 +26,6 @@ public class RestartSceneSystem : ReactiveSystem<GameEntity>
 
     protected override void Execute(List<GameEntity> entities)
     {
-        var allEntities = _contexts.game.GetEntities();
-        GameController.Systems.DeactivateReactiveSystems();
-        GameController.Systems.ClearReactiveSystems();
-        foreach (GameEntity entity in allEntities)
-        {
-            if(entity.hasView)
-            {
-                entity.view.value.Unlink();
-                entity.Destroy();
-                continue;
-            }
-            entity.Destroy();
-            
-        }
-        SceneManager.LoadScene(GAME_SCENE);
+        GameController.LoadScene(GAME_SCENE, _contexts);
     }
 }

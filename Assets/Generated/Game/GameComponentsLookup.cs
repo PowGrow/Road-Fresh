@@ -35,19 +35,20 @@ public static class GameComponentsLookup {
     public const int PlayerSetup = 24;
     public const int Position = 25;
     public const int Resource = 26;
-    public const int Rigidbody = 27;
-    public const int Road = 28;
-    public const int RoadSetup = 29;
-    public const int SceneReloading = 30;
-    public const int SlurpAudioSource = 31;
-    public const int StrafeInput = 32;
-    public const int StrafeSpeed = 33;
-    public const int Ui = 34;
-    public const int UISetup = 35;
-    public const int UnityRigs = 36;
-    public const int View = 37;
+    public const int ReturnMenu = 27;
+    public const int Rigidbody = 28;
+    public const int Road = 29;
+    public const int RoadSetup = 30;
+    public const int SceneReloading = 31;
+    public const int SlurpAudioSource = 32;
+    public const int StrafeInput = 33;
+    public const int StrafeSpeed = 34;
+    public const int Ui = 35;
+    public const int UISetup = 36;
+    public const int UnityRigs = 37;
+    public const int View = 38;
 
-    public const int TotalComponents = 38;
+    public const int TotalComponents = 39;
 
     public static readonly string[] componentNames = {
         "AddBackgroundCollision",
@@ -77,6 +78,7 @@ public static class GameComponentsLookup {
         "PlayerSetup",
         "Position",
         "Resource",
+        "ReturnMenu",
         "Rigidbody",
         "Road",
         "RoadSetup",
@@ -118,6 +120,7 @@ public static class GameComponentsLookup {
         typeof(PlayerSetupComponent),
         typeof(PositionComponent),
         typeof(ResourceComponent),
+        typeof(ReturnMenuComponent),
         typeof(RigidbodyComponent),
         typeof(RoadComponent),
         typeof(RoadSetupComponent),

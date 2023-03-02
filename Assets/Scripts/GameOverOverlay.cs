@@ -38,7 +38,7 @@ public class GameOverOverlay : MonoBehaviour
 
     public void OnMainMenuButtonClick()
     {
-
+        Contexts.sharedInstance.game.isReturnMenu = true;
     }
 
     public void OnPointerDown()

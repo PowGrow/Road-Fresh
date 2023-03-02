@@ -19,6 +19,7 @@ public sealed class GameSystems: Feature
         Add(new PlayerMoveSystem(contexts));
         //Reactive
         Add(new RestartSceneSystem(contexts));
+        Add(new ReturnMenuSystem(contexts));
         Add(new GameOverSystem(contexts));
         Add(new ScoreSystem(contexts));
         Add(new ObstacleCounterSystem(contexts));
