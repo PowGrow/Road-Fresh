@@ -8,6 +8,13 @@ using UnityEngine;
 
 public static class Statistic
 {
+    private static List<Line> _cachedStats;
+
+    public static List<Line> CachedStats
+    {
+        get { return _cachedStats; }
+    }
+
     private const string SAVE_FILE_NAME = "statistic.dat";
     public static List<Line> LoadStatistic()
     {
@@ -18,6 +25,7 @@ public static class Statistic
         statistic = formatter.Deserialize(stream) as List<Line>;
         stream.Close();
         stream.Dispose();
+        _cachedStats = statistic;
         return statistic;
     }
 
@@ -29,6 +37,7 @@ public static class Statistic
             formatter.Serialize(stream, statistic);
             stream.Close();
         }
+        _cachedStats = statistic;
     }
 
     private static string FileNameCombine(string saveFileName)
@@ -44,6 +53,29 @@ public static class Statistic
             return false;
         }
         return true;
+    }
+
+    public static string ConvertTime(float time)
+    {
+        int _seconds = (int)time % 60;
+        int _minutes = (int)time / 60;
+        int _hours = _minutes / 60;
+
+        if (_hours == 0)
+        {
+            if (_minutes == 0)
+            {
+                return $"00:00:{_seconds}";
+            }
+            else
+            {
+                return $"00:{_minutes}:{_seconds}";
+            }
+        }
+        else
+        {
+            return $"{_hours}:{_minutes}:{_seconds}";
+        }
     }
 
     [Serializable]
