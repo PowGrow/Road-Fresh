@@ -1,26 +1,29 @@
 using Entitas;
 using UnityEngine;
 
-public class RoadMoveSystem : IExecuteSystem
+namespace RoadFresh.GameLoop.Systems
 {
-    private Contexts _contexts;
-
-    private IGroup<GameEntity> _group;
-
-    public RoadMoveSystem(Contexts contexts)
+    public class RoadMoveSystem : IExecuteSystem
     {
-        _contexts = contexts;
-        _group = contexts.game.GetGroup(GameMatcher.AllOf(GameMatcher.Road));
-    }
+        private Contexts _contexts;
 
-    public void Execute()
-    {
-        foreach (var entity in _group)
+        private IGroup<GameEntity> _group;
+
+        public RoadMoveSystem(Contexts contexts)
         {
-            if(entity.hasView && !_contexts.game.isGamePaused)
+            _contexts = contexts;
+            _group = contexts.game.GetGroup(GameMatcher.AllOf(GameMatcher.Road));
+        }
+
+        public void Execute()
+        {
+            foreach (var entity in _group)
             {
-                entity.view.value.transform.Translate(new Vector3(0,0,-_contexts.game.roadSetup.value.RoadSpeed * _contexts.game.gameData.value.GlobalGameSpeed) * Time.deltaTime);
-                entity.ReplacePosition(entity.view.value.transform.position);
+                if (entity.hasView && !_contexts.game.isGamePaused)
+                {
+                    entity.view.value.transform.Translate(new Vector3(0, 0, -_contexts.game.roadSetup.value.RoadSpeed * _contexts.game.gameData.value.GlobalGameSpeed) * Time.deltaTime);
+                    entity.ReplacePosition(entity.view.value.transform.position);
+                }
             }
         }
     }

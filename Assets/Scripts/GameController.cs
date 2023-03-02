@@ -1,7 +1,9 @@
 using Entitas;
 using Entitas.Unity;
+using RoadFresh.Initialize.Setups;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 
 public class GameController : MonoBehaviour
 {
@@ -19,18 +21,13 @@ public class GameController : MonoBehaviour
     private int targetFrameRateWindows;
     [SerializeField]
     private int targetFrameRateAndroid;
-    private static Systems _systems;
+
     private Contexts _contexts;
-    
+    private Systems _systems;
 
-    public static Systems Systems
+    public void LoadScene(string sceneName)
     {
-        get { return _systems; }
-    }
-
-    public static void LoadScene(string sceneName,Contexts contexts)
-    {
-        var allEntities = contexts.game.GetEntities();
+        var allEntities = _contexts.game.GetEntities();
         _systems.DeactivateReactiveSystems();
         _systems.ClearReactiveSystems();
         foreach (GameEntity entity in allEntities)
@@ -60,6 +57,7 @@ public class GameController : MonoBehaviour
     {
         _contexts = Contexts.sharedInstance;
         _systems = new GameSystems(_contexts);
+        _contexts.game.SetGameController(this);
         _contexts.game.SetPlayerSetup(playerSetup);
         _contexts.game.SetRoadSetup(roadSetup);
         _contexts.game.SetBackgroundSetup(backgroundSetup);

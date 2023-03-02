@@ -1,22 +1,22 @@
 using Entitas;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
-public class GameUIInitializeSystem : IInitializeSystem
+namespace RoadFresh.View.Systems
 {
-    private Contexts _contexts;
-
-    public GameUIInitializeSystem(Contexts contexts)
+    public class GameUIInitializeSystem : IInitializeSystem
     {
-        _contexts = contexts;
-    }
+        private Contexts _contexts;
 
-    public void Initialize()
-    {
-        var uiSetup = _contexts.game.uISetup.value;
-        var uiEntity = _contexts.game.CreateEntity();
-        uiEntity.isUi = true;
-        uiEntity.AddResource(uiSetup.GameUI);
+        public GameUIInitializeSystem(Contexts contexts)
+        {
+            _contexts = contexts;
+        }
+
+        public void Initialize()
+        {
+            var uiSetup = _contexts.game.uISetup.value;
+            var uiEntity = _contexts.game.CreateEntity();
+            uiEntity.isUi = true;
+            uiEntity.AddResource(uiSetup.GameUI);
+        }
     }
 }

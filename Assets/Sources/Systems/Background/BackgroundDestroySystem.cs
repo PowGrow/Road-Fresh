@@ -2,36 +2,39 @@ using Entitas;
 using Entitas.Unity;
 using System.Collections.Generic;
 
-public class BackgroundDestroySystem : ReactiveSystem<GameEntity>
+namespace RoadFresh.GameLoop.Systems
 {
-    private Contexts _contexts;
-
-    public BackgroundDestroySystem(Contexts contexts) : base(contexts.game)
+    public class BackgroundDestroySystem : ReactiveSystem<GameEntity>
     {
-        _contexts = contexts;
-    }
+        private Contexts _contexts;
 
-    protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
-    {
-        return context.CreateCollector(GameMatcher.AnyOf(GameMatcher.DestroyBackgroundCollision));
-    }
-
-    protected override bool Filter(GameEntity entity)
-    {
-        return entity.hasDestroyBackgroundCollision;
-    }
-
-    protected override void Execute(List<GameEntity> entities)
-    {
-        foreach (var entity in entities)
+        public BackgroundDestroySystem(Contexts contexts) : base(contexts.game)
         {
-            GameEntity entityToDestroy = (GameEntity)entity.destroyBackgroundCollision.collisionObject.GetEntityLink().entity;
-            entityToDestroy.isDestroyed = true;
+            _contexts = contexts;
         }
 
-        foreach (var entity in entities)
+        protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
         {
-           entity.isDestroyed = true;
+            return context.CreateCollector(GameMatcher.AnyOf(GameMatcher.DestroyBackgroundCollision));
+        }
+
+        protected override bool Filter(GameEntity entity)
+        {
+            return entity.hasDestroyBackgroundCollision;
+        }
+
+        protected override void Execute(List<GameEntity> entities)
+        {
+            foreach (var entity in entities)
+            {
+                GameEntity entityToDestroy = (GameEntity)entity.destroyBackgroundCollision.collisionObject.GetEntityLink().entity;
+                entityToDestroy.isDestroyed = true;
+            }
+
+            foreach (var entity in entities)
+            {
+               entity.isDestroyed = true;
+            }
         }
     }
 }

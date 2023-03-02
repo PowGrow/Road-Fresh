@@ -6,6 +6,8 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+using RoadFresh.Initialize.Setups;
+
 public partial class GameContext {
 
     public GameEntity uISetupEntity { get { return GetGroup(GameMatcher.UISetup).GetSingleEntity(); } }

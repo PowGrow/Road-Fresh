@@ -2,36 +2,39 @@ using Entitas;
 using Entitas.Unity;
 using System.Collections.Generic;
 
-public class RoadDestroySystem : ReactiveSystem<GameEntity>
+namespace RoadFresh.GameLoop.Systems
 {
-    private Contexts _contexts;
-
-    public RoadDestroySystem(Contexts contexts) : base(contexts.game)
+    public class RoadDestroySystem : ReactiveSystem<GameEntity>
     {
-        _contexts = contexts;
-    }
+        private Contexts _contexts;
 
-    protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
-    {
-        return context.CreateCollector(GameMatcher.AnyOf(GameMatcher.DestroyRoadCollision));
-    }
-
-    protected override bool Filter(GameEntity entity)
-    {
-        return entity.hasDestroyRoadCollision;
-    }
-
-    protected override void Execute(List<GameEntity> entities)
-    {
-        foreach (var entity in entities)
+        public RoadDestroySystem(Contexts contexts) : base(contexts.game)
         {
-            GameEntity entityToDestroy = (GameEntity)entity.destroyRoadCollision.collisionObject.GetEntityLink().entity;
-            entityToDestroy.isDestroyed = true;
+            _contexts = contexts;
         }
 
-        foreach (var entity in entities)
+        protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
         {
-           entity.isDestroyed = true;
+            return context.CreateCollector(GameMatcher.AnyOf(GameMatcher.DestroyRoadCollision));
+        }
+
+        protected override bool Filter(GameEntity entity)
+        {
+            return entity.hasDestroyRoadCollision;
+        }
+
+        protected override void Execute(List<GameEntity> entities)
+        {
+            foreach (var entity in entities)
+            {
+                GameEntity entityToDestroy = (GameEntity)entity.destroyRoadCollision.collisionObject.GetEntityLink().entity;
+                entityToDestroy.isDestroyed = true;
+            }
+
+            foreach (var entity in entities)
+            {
+                entity.isDestroyed = true;
+            }
         }
     }
 }

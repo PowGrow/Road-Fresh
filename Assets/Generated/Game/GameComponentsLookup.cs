@@ -19,10 +19,10 @@ public static class GameComponentsLookup {
     public const int CharacterAnimator = 8;
     public const int DestroyBackgroundCollision = 9;
     public const int Destroyed = 10;
-    public const int DestroyOnLoad = 11;
-    public const int DestroyRoadCollision = 12;
-    public const int EngineAudioSource = 13;
-    public const int Fell = 14;
+    public const int DestroyRoadCollision = 11;
+    public const int EngineAudioSource = 12;
+    public const int Fell = 13;
+    public const int GameController = 14;
     public const int GameData = 15;
     public const int GameOver = 16;
     public const int GamePaused = 17;
@@ -62,10 +62,10 @@ public static class GameComponentsLookup {
         "CharacterAnimator",
         "DestroyBackgroundCollision",
         "Destroyed",
-        "DestroyOnLoad",
         "DestroyRoadCollision",
         "EngineAudioSource",
         "Fell",
+        "GameController",
         "GameData",
         "GameOver",
         "GamePaused",
@@ -104,10 +104,10 @@ public static class GameComponentsLookup {
         typeof(CharacterAnimatorComponent),
         typeof(DestroyBackgroundCollisionComponent),
         typeof(DestroyedComponent),
-        typeof(DestroyOnLoadComponent),
         typeof(DestroyRoadCollisionComponent),
         typeof(EngineAudioSourceComponent),
         typeof(FellComponent),
+        typeof(GameControllerComponent),
         typeof(GameDataComponent),
         typeof(GameOverComponent),
         typeof(GamePausedComponent),

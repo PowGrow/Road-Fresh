@@ -1,27 +1,30 @@
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
 
-public class UnityRigs : MonoBehaviour
+namespace RoadFresh.View
 {
-    [SerializeField]
-    private RigBuilder _rigBuilder;
-    [SerializeField]
-    private Transform _unityRigsTransform;
-    [SerializeField]
-    private Animator _characterAnimator;
-
-    public RigBuilder RigBuilder
+    public class UnityRigs : MonoBehaviour
     {
-        get { return _rigBuilder; }
-    }
+        [SerializeField]
+        private RigBuilder _rigBuilder;
+        [SerializeField]
+        private Transform _unityRigsTransform;
+        [SerializeField]
+        private Animator _characterAnimator;
 
-    public Transform UnityRigsTransform
-    {
-        get { return _unityRigsTransform; }
-    }
+        public RigBuilder RigBuilder
+        {
+            get { return _rigBuilder; }
+        }
 
-    public Animator CharacterAnimator
-    {
-        get { return _characterAnimator; }
+        public Transform UnityRigsTransform
+        {
+            get { return _unityRigsTransform; }
+        }
+
+        public Animator CharacterAnimator
+        {
+            get { return _characterAnimator; }
+        }
     }
 }

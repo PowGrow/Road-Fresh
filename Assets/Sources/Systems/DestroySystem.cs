@@ -3,36 +3,39 @@ using Entitas.Unity;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroySystem : ReactiveSystem<GameEntity>
+namespace RoadFresh.GameLoop.Systems
 {
-    private Contexts _contexts;
-
-    public DestroySystem(Contexts contexts) : base(contexts.game)
+    public class DestroySystem : ReactiveSystem<GameEntity>
     {
-        _contexts = contexts;
-    }
+        private Contexts _contexts;
 
-    protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
-    {
-        return context.CreateCollector(GameMatcher.Destroyed);
-    }
-
-    protected override bool Filter(GameEntity entity)
-    {
-        return entity.isDestroyed;
-    }
-
-    protected override void Execute(List<GameEntity> entities)
-    {
-        foreach (var entity in entities)
+        public DestroySystem(Contexts contexts) : base(contexts.game)
         {
-            if (entity.hasView)
+            _contexts = contexts;
+        }
+
+        protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
+        {
+            return context.CreateCollector(GameMatcher.Destroyed);
+        }
+
+        protected override bool Filter(GameEntity entity)
+        {
+            return entity.isDestroyed;
+        }
+
+        protected override void Execute(List<GameEntity> entities)
+        {
+            foreach (var entity in entities)
             {
-                var view = entity.view.value;
-                view.Unlink();
-                Object.Destroy(view);
+                if (entity.hasView)
+                {
+                    var view = entity.view.value;
+                    view.Unlink();
+                    Object.Destroy(view);
+                }
+                entity.Destroy();
             }
-            entity.Destroy();
         }
     }
 }

@@ -6,6 +6,8 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+using RoadFresh.View.UI;
+
 [Entitas.CodeGeneration.Attributes.DontGenerate(false)]
 public sealed class GameUIComponent : Entitas.IComponent {
     public GameUI value;

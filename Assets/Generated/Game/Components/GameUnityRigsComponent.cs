@@ -6,6 +6,8 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+using RoadFresh.View;
+
 public partial class GameEntity {
 
     public UnityRigsComponent unityRigs { get { return (UnityRigsComponent)GetComponent(GameComponentsLookup.UnityRigs); } }

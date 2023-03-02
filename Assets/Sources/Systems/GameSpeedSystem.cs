@@ -1,36 +1,39 @@
 using Entitas;
+using RoadFresh.Initialize.Setups;
 using UnityEngine;
 
-public sealed class GameSpeedSystem : IInitializeSystem, IExecuteSystem
+namespace RoadFresh.GameLoop.Systems
 {
-
-    private Contexts _contexts;
-
-    private float _gameTime = 0f;
-
-    private GameData _gameData;
-
-    public GameSpeedSystem(Contexts contexts)
+    public sealed class GameSpeedSystem : IInitializeSystem, IExecuteSystem
     {
-        _contexts = contexts;
-    }
 
-    public void Initialize()
-    {
-        _gameData = _contexts.game.gameData.value;
-        _gameData.GlobalGameSpeed = 1f;
-    }
+        private Contexts _contexts;
 
-    public void Execute()
-    {
-        if (!_contexts.game.isGamePaused)
+        private float _timePassed = 0f;
+
+        private GameData _gameData;
+
+        public GameSpeedSystem(Contexts contexts)
         {
-            _gameTime += Time.deltaTime;
-            if (_gameTime >= _gameData.DeltaInterval)
+            _contexts = contexts;
+        }
+
+        public void Initialize()
+        {
+            _gameData = _contexts.game.gameData.value;
+            _gameData.GlobalGameSpeed = 1f;
+        }
+
+        public void Execute()
+        {
+            if (!_contexts.game.isGamePaused)
             {
-                _gameData.GlobalGameSpeed += _gameData.DeltaSpeed;
-                Debug.Log("Current speed: " + _gameData.GlobalGameSpeed);
-                _gameTime = 0f;
+                _timePassed += Time.deltaTime;
+                if (_timePassed >= _gameData.DeltaInterval)
+                {
+                    _gameData.GlobalGameSpeed += _gameData.DeltaSpeed;
+                    _timePassed = 0f;
+                }
             }
         }
     }

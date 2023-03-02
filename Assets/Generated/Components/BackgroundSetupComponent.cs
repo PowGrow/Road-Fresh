@@ -6,6 +6,8 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+using RoadFresh.Initialize.Setups;
+
 [Entitas.CodeGeneration.Attributes.DontGenerate(false)]
 public sealed class BackgroundSetupComponent : Entitas.IComponent {
     public BackgroundSetup value;

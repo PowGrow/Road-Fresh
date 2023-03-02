@@ -1,26 +1,29 @@
 using Entitas;
 using UnityEngine;
 
-public class BackgroundMoveSystem : IExecuteSystem
+namespace RoadFresh.GameLoop.Systems
 {
-    private Contexts _contexts;
-
-    private IGroup<GameEntity> _group;
-
-    public BackgroundMoveSystem(Contexts contexts)
+    public class BackgroundMoveSystem : IExecuteSystem
     {
-        _contexts = contexts;
-        _group = contexts.game.GetGroup(GameMatcher.AllOf(GameMatcher.Background));
-    }
+        private Contexts _contexts;
 
-    public void Execute()
-    {
-        foreach (var entity in _group)
+        private IGroup<GameEntity> _group;
+
+        public BackgroundMoveSystem(Contexts contexts)
         {
-            if(entity.hasView && !_contexts.game.isGamePaused)
+            _contexts = contexts;
+            _group = contexts.game.GetGroup(GameMatcher.AllOf(GameMatcher.Background));
+        }
+
+        public void Execute()
+        {
+            foreach (var entity in _group)
             {
-                entity.view.value.transform.Translate(new Vector3(0,0,-_contexts.game.backgroundSetup.value.BackgroundSpeed * _contexts.game.gameData.value.GlobalGameSpeed) * Time.deltaTime);
-                entity.ReplacePosition(entity.view.value.transform.position);
+                if(entity.hasView && !_contexts.game.isGamePaused)
+                {
+                    entity.view.value.transform.Translate(new Vector3(0,0,-_contexts.game.backgroundSetup.value.BackgroundSpeed * _contexts.game.gameData.value.GlobalGameSpeed) * Time.deltaTime);
+                    entity.ReplacePosition(entity.view.value.transform.position);
+                }
             }
         }
     }
