@@ -31,7 +31,8 @@ namespace RoadFresh.GameLoop.Systems
                 var background = _contexts.game.CreateEntity();
                 background.isRoad = true;
                 background.AddPosition(roadSetup.AddPosition);
-                background.AddResource(roadSetup.roadPrefabs[Random.Range(0, roadSetup.roadPrefabs.Count - 1)]);
+                var randomRoadIndex = Random.Range(0, roadSetup.roadPrefabs.Count);
+                background.AddResource(roadSetup.roadPrefabs[randomRoadIndex]);
             }
             foreach (var entity in entities)
             {

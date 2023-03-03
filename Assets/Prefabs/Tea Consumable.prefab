@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8daed92a9d6e3314d9b78ba19aa98ce5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _heatAmount: 0.1
+  _heatAmount: 0.05
 --- !u!1 &2614067500450198012
 GameObject:
   m_ObjectHideFlags: 0
