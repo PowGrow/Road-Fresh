@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roadPrefabs:
   - {fileID: 8901845225342570657, guid: e31fcbf9373c40143b6e56b69739a342, type: 3}
+  - {fileID: 8901845225342570657, guid: cc98b3c2edd5039438e083d801bcc515, type: 3}
   RoadSpeed: 7
   InitializePosition: {x: 0, y: 2.8, z: 0}
   AddPosition: {x: 0, y: 2.8, z: 98}

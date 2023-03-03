@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Prefab: {fileID: 2860448652223071225, guid: 5f526d0e7d32463449bb116337a63c19, type: 3}
   StrafeSpeed: 4
-  HeatLosePerTick: 0.03
+  HeatLosePerTick: 0.06
   InitialPosition: {x: -2.5, y: 4.06, z: 1.7}
   beepSound: {fileID: 8300000, guid: dbd4cf7f460282348b8150fdb6eb34c4, type: 3}
   teaSlurpSound: {fileID: 8300000, guid: 829868754fac6f74482bc5b85f0be7db, type: 3}
