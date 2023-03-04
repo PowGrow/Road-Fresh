@@ -179,6 +179,7 @@ GameObject:
   - component: {fileID: 4739504799312116}
   - component: {fileID: 205797116378804898}
   - component: {fileID: 65364095302063846}
+  - component: {fileID: 938421047290984052}
   m_Layer: 0
   m_Name: Gen_const_barricade_01_a
   m_TagString: Untagged
@@ -245,6 +246,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0813107, y: 1.3180153, z: 0.46992505}
   m_Center: {x: -0.00046515465, y: 0.6463752, z: -0.011902243}
+--- !u!114 &938421047290984052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871674991797730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93774e06d0158a3498ea8f96556f1be4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1873482910055484
 GameObject:
   m_ObjectHideFlags: 0

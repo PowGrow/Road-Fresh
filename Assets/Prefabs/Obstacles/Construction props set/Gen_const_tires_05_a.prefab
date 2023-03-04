@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4686892021425212}
   - component: {fileID: 205451314749167552}
   - component: {fileID: 65245617501215554}
+  - component: {fileID: -7845968763157173890}
   m_Layer: 0
   m_Name: Gen_const_tires_05_a
   m_TagString: Untagged
@@ -77,6 +78,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1624064, y: 1.2828786, z: 1.1962402}
   m_Center: {x: 0.05404076, y: 0.68068767, z: 0.0036587715}
+--- !u!114 &-7845968763157173890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105688905877380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93774e06d0158a3498ea8f96556f1be4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1274789726135952
 GameObject:
   m_ObjectHideFlags: 0

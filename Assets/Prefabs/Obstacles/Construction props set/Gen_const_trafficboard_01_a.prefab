@@ -260,6 +260,7 @@ GameObject:
   - component: {fileID: 4235950317929898}
   - component: {fileID: 205028804034801650}
   - component: {fileID: 65638925113920010}
+  - component: {fileID: -8860818586376642777}
   m_Layer: 0
   m_Name: Gen_const_trafficboard_01_a
   m_TagString: Untagged
@@ -326,6 +327,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0715847, y: 1.3589442, z: 0.62371886}
   m_Center: {x: 0.016672939, y: 1.2618551, z: 0.14221561}
+--- !u!114 &-8860818586376642777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841537884107198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93774e06d0158a3498ea8f96556f1be4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8939022875757276879
 GameObject:
   m_ObjectHideFlags: 0

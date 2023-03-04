@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4831677684911442}
   - component: {fileID: 205041008142930588}
   - component: {fileID: 65397580853784898}
+  - component: {fileID: 3437239656219136673}
   m_Layer: 0
   m_Name: Gen_const_portablepotty_01_a
   m_TagString: Untagged
@@ -77,6 +78,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.2058861, y: 2.3044355, z: 1.2378211}
   m_Center: {x: -0.00080406666, y: 1.1294142, z: 0.071158886}
+--- !u!114 &3437239656219136673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323310632753030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93774e06d0158a3498ea8f96556f1be4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1435830019461652
 GameObject:
   m_ObjectHideFlags: 0
