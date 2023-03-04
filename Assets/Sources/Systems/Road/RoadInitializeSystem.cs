@@ -1,4 +1,6 @@
 using Entitas;
+using RoadFresh.Stats;
+using System.Security.Principal;
 using UnityEngine;
 
 namespace RoadFresh.Initialize.Systems
@@ -18,7 +20,10 @@ namespace RoadFresh.Initialize.Systems
             var roadEntity = _contexts.game.CreateEntity();
             roadEntity.isRoad = true;
             roadEntity.AddPosition(roadSetup.InitializePosition);
-            roadEntity.AddResource(roadSetup.roadPrefabs[Random.Range(0, roadSetup.roadPrefabs.Count - 1)]);
+            if(!Statistic.IsThereAreSaveData())
+                roadEntity.AddResource(roadSetup.roadPrefabs[0]);
+            else
+                roadEntity.AddResource(roadSetup.roadPrefabs[1]);
         }
     }
 }

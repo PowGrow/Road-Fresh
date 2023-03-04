@@ -15,6 +15,6 @@ MonoBehaviour:
   DeltaSpeed: 0.1
   DeltaInterval: 10
   ScorePerObstacle: 100
-  GlobalGameSpeed: 1
-  Score: 0
-  ObstaclePassed: 0
+  GlobalGameSpeed: 2
+  Score: 2300
+  ObstaclePassed: 14

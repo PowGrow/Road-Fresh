@@ -12,6 +12,7 @@ namespace RoadFresh.GameLoop.Systems
         private float _timePassed = 0f;
 
         private GameData _gameData;
+        private const float MAX_SPEED = 2.5f;
 
         public GameSpeedSystem(Contexts contexts)
         {
@@ -26,7 +27,7 @@ namespace RoadFresh.GameLoop.Systems
 
         public void Execute()
         {
-            if (!_contexts.game.isGamePaused)
+            if (!_contexts.game.isGamePaused && _gameData.GlobalGameSpeed < MAX_SPEED)
             {
                 _timePassed += Time.deltaTime;
                 if (_timePassed >= _gameData.DeltaInterval)

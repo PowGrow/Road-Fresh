@@ -62,12 +62,16 @@ namespace RoadFresh.GameLoop.Systems
             }
             else
             {
-                var statistic = new List<Statistic.Line>
-            {
-                statisticLine
-            };
-                Statistic.SaveStatistic(statistic);
-                return true;
+                if(!_contexts.game.gameUI.value.GameOverlay.Tutorial.IsActive)
+                {
+                    var statistic = new List<Statistic.Line>
+                    {
+                        statisticLine
+                    };
+                    Statistic.SaveStatistic(statistic);
+                    return true;
+                }
+                return false;
             }
         }
     }

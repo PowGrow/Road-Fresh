@@ -19,6 +19,10 @@ namespace RoadFresh.View.UI
         private GameObject joystick;
         [SerializeField]
         private GameObject beepButton;
+        [SerializeField]
+        private Tutorial tutorial;
+
+        public Tutorial Tutorial { get => tutorial; }
 
         private void Awake()
         {
