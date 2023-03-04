@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4107128372169306}
   - component: {fileID: 205263266054088522}
   - component: {fileID: 65111748926047236}
+  - component: {fileID: 7582001285888053894}
   m_Layer: 0
   m_Name: Gen_const_barrels_01_b
   m_TagString: Untagged
@@ -77,6 +78,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.7055279, y: 1.1995254, z: 0.6562929}
   m_Center: {x: -0.0005735159, y: 0.6477263, z: -0.0023662448}
+--- !u!114 &7582001285888053894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440951455247878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93774e06d0158a3498ea8f96556f1be4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1757720158403586
 GameObject:
   m_ObjectHideFlags: 0

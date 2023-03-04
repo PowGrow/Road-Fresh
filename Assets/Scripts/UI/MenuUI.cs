@@ -9,12 +9,16 @@ namespace RoadFresh.View.UI
         private GameObject menuObject;
         [SerializeField]
         private GameObject scoreTableObject;
+        [SerializeField]
+        private GameObject quitGameButtonObject;
 
         private AudioSource _clickAudioSource;
 
         private const string GAME_SCENE = "Game";
         private void Awake()
         {
+            if (Application.platform == RuntimePlatform.Android)
+                quitGameButtonObject.SetActive(false);
             _clickAudioSource = GetComponent<AudioSource>();
         }
 
@@ -38,6 +42,11 @@ namespace RoadFresh.View.UI
         {
             menuObject.SetActive(true);
             scoreTableObject.SetActive(false);
+        }
+
+        public void OnQuitButtonClick()
+        {
+            Application.Quit();
         }
 
     }

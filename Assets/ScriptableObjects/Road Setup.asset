@@ -19,6 +19,7 @@ MonoBehaviour:
   - {fileID: 8901845225342570657, guid: cc98b3c2edd5039438e083d801bcc515, type: 3}
   - {fileID: 8901845225342570657, guid: 0f8bf1e361c079a43ba09379cd8ec3ef, type: 3}
   - {fileID: 8901845225342570657, guid: 2d5a78eff2ff065409965dac72494b9e, type: 3}
+  - {fileID: 8901845225342570657, guid: 44f05b131a94db043abcbbf375113d85, type: 3}
   RoadSpeed: 7
   InitializePosition: {x: 0, y: 2.8, z: 0}
   AddPosition: {x: 0, y: 2.8, z: 98}
